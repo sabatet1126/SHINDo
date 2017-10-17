@@ -9,6 +9,8 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
 
     @IBOutlet weak var YOTEILabel: UILabel!
     @IBOutlet weak var HIZUKELabel: UILabel!
@@ -19,10 +21,11 @@ class CustomTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
+    
 }
