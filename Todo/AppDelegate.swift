@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     var charaNum:UserDefaults = UserDefaults.standard
     var colorData:UserDefaults = UserDefaults.standard
     var serifuData : UserDefaults = UserDefaults.standard
-    
+    var backgroundTaskID : UIBackgroundTaskIdentifier = 0
     
     var aColor = UIColor(red: 242/255, green: 241/255, blue: 237/255, alpha: 1.0)
     var bColor = UIColor(red: 147/255, green: 22/255, blue: 33/255, alpha: 1.0)
@@ -31,12 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     var colorIndex = 0
     
     var textArray: [String] = ["終わった？", "無理しないでやって頂戴。", "集中して取り組みなさいよ","体調管理はしっかりしなさいよ。","休憩時間も必要ね","過度な労働はダメよ","進捗はどうかしら","作業はどうしたの？","休憩もほどほどに！","私も頑張るから..."]
-    
-    
-    
-    
-    
-    
+
     // UIColor(red: /255, green: /255, blue: /255, alpha: 1.0)
     
     let kyoutsuWHITE = UIColor(red: 242/255, green: 241/255, blue: 237/255, alpha: 1.0)
@@ -297,9 +292,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        let application = UIApplication()
+        UIApplication.shared.applicationIconBadgeNumber += 1
         
-        application.applicationIconBadgeNumber += 1
+  //      let application = UIApplication()
+   //     application.applicationIconBadgeNumber += 1
         
         //        //Alertダイアログでテスト表示
         //        let contentBody = response.notification.request.content.body
@@ -315,6 +311,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     
     
     func applicationWillResignActive(_ application: UIApplication) {
+        
+        self.backgroundTaskID = application.beginBackgroundTask(){
+            [weak self] in
+            application.endBackgroundTask((self?.backgroundTaskID)!)
+            self?.backgroundTaskID = UIBackgroundTaskInvalid
+        }
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
         
@@ -511,6 +513,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        application.endBackgroundTask(self.backgroundTaskID)
+        
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     

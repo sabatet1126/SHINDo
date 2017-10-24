@@ -36,7 +36,7 @@ class MusicData: NSObject {
     var kotaroVoice:[[String]] =  [["ko11","ko12","ko13","ko14"],["ko01","ko04","ko05","ko06","ko08","ko09","ko11"],["ko07","ko10","ko02","ko18","ko03"],["ko02"],["ko01","ko04","ko05","ko06","ko08","ko09","ko11","ko07","ko10","ko02","ko18","ko03","ko16","ko17","ko18","ko19"]]
    
 //ミナト
-    var minatoVoice:[[String]] =  [["12A","13B","14A","15B"],["1A","4A","5B","7A","8B","9C","10B","16A"],["6D","19D","18B","3B","2A"],["6B"],["1A","4A","5B","7A","8B","9C","10B","16A","6D","19D","18B","3B","2A","17A"]]
+    var minatoVoice:[[String]] =  [["12A","13B","14A","15B"],["1A","4A","5B","7A","8B","9C","10B","16A"],["6D","19D","18A","3B","2A"],["6B"],["1A","4A","5B","7A","8B","9C","10B","16A","6D","19D","18A","3B","2A","17A"]]
 //イッシキ
     var issikiVoice:[[String]] =  [["ISK-16","ISK-17","ISK-18","ISK-19"],["ISK-02","ISK-06","ISK-10","ISK-11","ISK-14","ISK-15","ISK-03"],["ISK-05","ISK-07","ISK-09","ISK-12","ISK-13"],["ISK-07"],["ISK-02","ISK-06","ISK-10","ISK-11","ISK-14","ISK-15","ISK-03","ISK-05","ISK-08","ISK-09","ISK-12","ISK-13","ISK-01","ISK-03","ISK-04","ISK-07"]]
 //アクツ

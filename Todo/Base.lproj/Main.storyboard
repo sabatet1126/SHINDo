@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="03SmartFontUI.ttf">
+        <array key="03スマートフォントUI.otf">
             <string>03SmartFontUI</string>
         </array>
     </customFonts>
@@ -254,8 +254,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6oR-uN-kbo" secondAttribute="height" multiplier="1:1" id="gMJ-im-0ty"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="28"/>
-                                <state key="normal" title="色">
+                                <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="23"/>
+                                <state key="normal" title="COLOR">
                                     <color key="titleColor" red="1" green="0.99703430734498366" blue="0.99145291281957348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -268,8 +268,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Tgg-ZP-eL7" secondAttribute="height" multiplier="1:1" id="UHK-Eu-v94"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="28"/>
-                                <state key="normal" title="外">
+                                <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="32"/>
+                                <state key="normal" title="SITE">
                                     <color key="titleColor" red="1" green="0.99703430734498366" blue="0.99145291281957348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -305,8 +305,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5Db-7M-ygG" secondAttribute="height" multiplier="1:1" id="xdM-6g-9gy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="28"/>
-                                <state key="normal" title="人">
+                                <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="14"/>
+                                <state key="normal" title="CHARACTER">
                                     <color key="titleColor" red="1" green="0.99703430734498366" blue="0.99145291281957348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -319,8 +319,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ptr-ZE-bDg" secondAttribute="height" multiplier="1:1" id="nqO-cV-IaR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="28"/>
-                                <state key="normal" title="呟">
+                                <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="23"/>
+                                <state key="normal" title="TWEET">
                                     <color key="titleColor" red="1" green="0.99703430734498366" blue="0.99145291281957348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -402,7 +402,7 @@
                                         </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="締切日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhb-bY-wMq">
-                                        <rect key="frame" x="135" y="73" width="51" height="17"/>
+                                        <rect key="frame" x="135" y="71.5" width="51" height="18.5"/>
                                         <fontDescription key="fontDescription" name="03SmartFontUI" family="03SmartFontUI" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -424,7 +424,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQk-zF-ONt">
-                                        <rect key="frame" x="20" y="3" width="280" height="40"/>
+                                        <rect key="frame" x="20" y="1.5" width="280" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Zzl-6C-I90"/>
                                         </constraints>

@@ -79,7 +79,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
             
    //         if timer == nil{
                 //タイマーをオンにするコード
-                timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector:"soundTimer", userInfo: nil,repeats: true)
+                timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector:"soundTimer", userInfo: nil,repeats: true)
                 
     //        }
             
@@ -92,7 +92,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         
-        if timer != nil {
+       if timer != nil {
             timer.invalidate()
             
             print("タイマーが空かチェック")
@@ -158,7 +158,6 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         }else if charaNum.object(forKey: "Num")as! Int == 18{
             musicArr = musicDate.ryujiVoice[4]
         }
-        
         
         
         print(musicArr)
@@ -327,11 +326,12 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         }
         
         print(musicArr)
+       
         
         var rand = Int(arc4random_uniform(UInt32(musicArr.count-1)))
-        print(rand)
-        print(musicArr.count - 1)
+        print(musicArr[rand])
         
+    
         let soundFilePath:String = Bundle.main.path(forResource: musicArr[rand], ofType: "mp3")!
         
         

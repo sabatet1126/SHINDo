@@ -59,7 +59,7 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         print(Datepicker.date)
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd/HH/mm"
+        formatter.dateFormat = "yyyy/MM/dd/HH:mm"
         
         //testLabelに表示
         testLabel.text = formatter.string(from: sender.date)

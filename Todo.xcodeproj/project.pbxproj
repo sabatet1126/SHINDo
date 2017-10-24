@@ -173,7 +173,6 @@
 		853590091F4DC63B002F64B2 /* 17B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85358F941F4DC63A002F64B2 /* 17B.mp3 */; };
 		8535900A1F4DC63B002F64B2 /* 17C.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85358F951F4DC63A002F64B2 /* 17C.mp3 */; };
 		8535900B1F4DC63B002F64B2 /* 18A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85358F961F4DC63A002F64B2 /* 18A.mp3 */; };
-		8535900C1F4DC63B002F64B2 /* 18B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85358F971F4DC63A002F64B2 /* 18B.mp3 */; };
 		8535900D1F4DC63B002F64B2 /* 18C.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85358F981F4DC63A002F64B2 /* 18C.mp3 */; };
 		8535900E1F4DC63B002F64B2 /* 19A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85358F991F4DC63A002F64B2 /* 19A.mp3 */; };
 		8535900F1F4DC63B002F64B2 /* 19B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85358F9A1F4DC63A002F64B2 /* 19B.mp3 */; };
@@ -750,7 +749,6 @@
 		85358F941F4DC63A002F64B2 /* 17B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 17B.mp3; sourceTree = "<group>"; };
 		85358F951F4DC63A002F64B2 /* 17C.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 17C.mp3; sourceTree = "<group>"; };
 		85358F961F4DC63A002F64B2 /* 18A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 18A.mp3; sourceTree = "<group>"; };
-		85358F971F4DC63A002F64B2 /* 18B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 18B.mp3; sourceTree = "<group>"; };
 		85358F981F4DC63A002F64B2 /* 18C.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 18C.mp3; sourceTree = "<group>"; };
 		85358F991F4DC63A002F64B2 /* 19A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 19A.mp3; sourceTree = "<group>"; };
 		85358F9A1F4DC63A002F64B2 /* 19B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 19B.mp3; sourceTree = "<group>"; };
@@ -1082,6 +1080,7 @@
 		85AD0C681F5C56E8009EF132 /* am-18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "am-18.mp3"; sourceTree = "<group>"; };
 		85AD0C691F5C56E8009EF132 /* am-19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "am-19.mp3"; sourceTree = "<group>"; };
 		85AD0C6A1F5C56E8009EF132 /* am-20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "am-20.mp3"; sourceTree = "<group>"; };
+		85CE4A751F9F442A00846E44 /* 18B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 18B.mp3; sourceTree = "<group>"; };
 		85D0B95D1F1DB796003E630C /* ヘッダー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ヘッダー.png"; sourceTree = "<group>"; };
 		85D0B95F1F1DB7AA003E630C /* SHINDoロゴ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHINDoロゴ.png"; sourceTree = "<group>"; };
 		85E91AEB1ECB0DAD00DCC4D4 /* c_akutsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c_akutsu.png; sourceTree = "<group>"; };
@@ -1490,7 +1489,7 @@
 				85358F941F4DC63A002F64B2 /* 17B.mp3 */,
 				85358F951F4DC63A002F64B2 /* 17C.mp3 */,
 				85358F961F4DC63A002F64B2 /* 18A.mp3 */,
-				85358F971F4DC63A002F64B2 /* 18B.mp3 */,
+				85CE4A751F9F442A00846E44 /* 18B.mp3 */,
 				85358F981F4DC63A002F64B2 /* 18C.mp3 */,
 				85358F991F4DC63A002F64B2 /* 19A.mp3 */,
 				85358F9A1F4DC63A002F64B2 /* 19B.mp3 */,
@@ -2113,6 +2112,12 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8QR2WDBFJ6;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					8518DBD71E24F9DA009AC737 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -2161,7 +2166,6 @@
 				85A6661A1ECB00E000D27BC7 /* issiki.png in Resources */,
 				85E91B041ECB0DAD00DCC4D4 /* c_tsutsumi.png in Resources */,
 				85EF42C71F1E020F000A9CA9 /* B7.mp3 in Resources */,
-				8535900C1F4DC63B002F64B2 /* 18B.mp3 in Resources */,
 				851A0F7D1F2867F400E08029 /* k4B.mp3 in Resources */,
 				8581FCDB1F5ED5DD0086BF1D /* ntg-10.mp3 in Resources */,
 				8531D4341F0BAD7800E7E8C4 /* tutumi018.mp3 in Resources */,
@@ -2792,9 +2796,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Todo/Pods-Todo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Onboard/Onboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Onboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3012,12 +3019,15 @@
 			baseConfigurationReference = C41970F0C6BB9B8C218714E9 /* Pods-Todo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8QR2WDBFJ6;
 				INFOPLIST_FILE = Todo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = saba.SHINDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -3027,12 +3037,15 @@
 			baseConfigurationReference = 75B6EEF3398C27114CF536E5 /* Pods-Todo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8QR2WDBFJ6;
 				INFOPLIST_FILE = Todo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = saba.SHINDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
