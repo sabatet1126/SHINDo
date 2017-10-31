@@ -71,6 +71,24 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
             switchBool = defaults.object(forKey: "RANDOM") as! Bool
         }
         
+        /// バックグラウンドでも再生できるカテゴリに設定する
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+        } catch  {
+            // エラー処理
+            fatalError("カテゴリ設定失敗")
+        }
+        
+        // sessionのアクティブ化
+        do {
+            try session.setActive(true)
+        } catch {
+            // audio session有効化失敗時の処理
+            // (ここではエラーとして停止している）
+            fatalError("session有効化失敗")
+        }
+        
         
         print(switchBool)
         
