@@ -97,7 +97,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
             
    //         if timer == nil{
                 //タイマーをオンにするコード
-                timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector:"soundTimer", userInfo: nil,repeats: true)
+                timer = Timer.scheduledTimer(timeInterval: 15.0, target: self, selector:"soundTimer", userInfo: nil,repeats: true)
                 
     //        }
             

@@ -10,10 +10,14 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    init(title:String) {
+   /* init(title:String) {
         print(title)
     }
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+   */
     override func viewDidLoad() {
         super.viewDidLoad()
 

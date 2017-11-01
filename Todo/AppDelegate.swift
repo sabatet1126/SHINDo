@@ -514,62 +514,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
-        
-        if true {
-            let content1 = OnboardingViewController(
-                title : "+ボタンで追加")
-            )
-            
-            
-            let content2 = OnboardingContentViewController(
-                title: "Title2",
-                body: "Body2",
-                image: nil,
-                buttonText: "",
-                action: nil
-            )
-            let content3 = OnboardingContentViewController(
-                title: "Title3",
-                body: "Body3",
-                image: nil,
-                buttonText: "ログイン",
-                action: {
-                    let alert = UIAlertController(
-                        title: "ログイン",
-                        message: "ログインしました",
-                        preferredStyle: .Alert
-                    )
-                    let ok = UIAlertAction(
-                        title: "OK",
-                        style: .Default,
-                        handler: nil
-                    )
-                    alert.addAction(ok)
-                    application.keyWindow?.rootViewController?.presentViewController(alert,
-                                                                                     animated: true,
-                                                                                     completion: nil
-                    )
-            }
-            )
-            
-            let bgImageURL = NSURL(string: "https://www.pakutaso.com/shared/img/thumb/KAZ_hugyftdrftyg_TP_V.jpg")!
-            let bgImage = UIImage(data: NSData(contentsOfURL: bgImageURL)!)
-            let vc = OnboardingViewController(
-                backgroundImage: bgImage,
-                contents: [content1, content2, content3]
-            )
-            vc.allowSkipping = true
-            vc.skipHandler = { _ in
-                print("skip")
-            }
-            
-            window?.rootViewController = vc
-            
-            return true
-        }
-        
-        return true
-    }
+        //ここからOnboard
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
         
