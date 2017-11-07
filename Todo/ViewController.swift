@@ -13,6 +13,7 @@ import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegate{
     
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var colorData : UserDefaults = UserDefaults.standard
     var defaults: UserDefaults = UserDefaults.standard
@@ -21,8 +22,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
     @IBOutlet var serifu: UILabel!
     @IBOutlet weak var illust2: UIImageView!
     
-    
+    @IBOutlet weak var CoachMark: CoachMarkView!
     @IBOutlet weak var View2: UIView!
+    
     //toDOリスト
     @IBOutlet weak var todolistTable: UITableView!
     
@@ -34,6 +36,28 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
     var serifuData : UserDefaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        // ここに初期化処理を書く
+        // UserDefaultsを使ってフラグを保持する
+        let userDefault = UserDefaults.standard
+        // "firstLaunch"をキーに、Bool型の値を保持する
+        let dict = ["firstLaunch": true]
+        // デフォルト値登録
+        // ※すでに値が更新されていた場合は、更新後の値のままになる
+        userDefault.register(defaults: dict)
+        
+        // "firstLaunch"に紐づく値がtrueなら(=初回起動)、値をfalseに更新して処理を行う
+        if userDefault.bool(forKey: "firstLaunch") {
+            userDefault.set(false, forKey: "firstLaunch")
+            print("初回起動の時だけ呼ばれるよ")
+            CoachMark.x = 390
+            CoachMark.y = 60
+        }else{
+            CoachMark.isHidden = true
+            
+        }
+        
+        print("初回起動じゃなくても呼ばれるアプリ起動時の処理だよ")
         
         var charasamune:Int = 0
         var charaImage2 = ["サムネツバキ.png","サムネウタ.png","サムネツツミ.png","サムネヴェロ.png","サムネキャンディス.png","サムネソニア.png","サムネヒバリ.png","サムネアメノミヤ.png","サムネソージ.png","サムネコタロー.png","サムネミナト.png","サムネイッシキ.png","サムネ阿久津.png","サムネノッティンガム.png","サムネノア.png","サムネユリチカ.png","サムネカイト.png","サムネオリバー.png","サムネリュウジ.png"]
@@ -226,9 +250,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
         
         // Do any additional setup after loading the view, typically from a nib.
         
+  
         
         
     }
+    
+    
+        
     
     
     @IBAction func fukidashi() {
