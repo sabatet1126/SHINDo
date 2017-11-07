@@ -442,6 +442,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                     content.userInfo = ["notifyID":todoItem[i]]
                     content.sound = UNNotificationSound.init(named: tuchion[0]+".mp3")
                     content.badge = badgeNum as NSNumber
+                    DateItem[i] = DateItem[i].replacingOccurrences(of: ":", with: "/")//とりあえず置き換え
                     let split = DateItem[i].components(separatedBy: "/")
                     
                     
