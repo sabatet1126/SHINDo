@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     var colorIndex = 0
     
     var textArray: [String] = ["終わった？", "無理しないでやって頂戴。", "集中して取り組みなさいよ","体調管理はしっかりしなさいよ。","休憩時間も必要ね","過度な労働はダメよ","進捗はどうかしら","作業はどうしたの？","休憩もほどほどに！","私も頑張るから..."]
-
+    var secondArray: [String] = ["担当画面へようこそ！ここでは上部をタップするとあなたの管理人が持ち上げ、","下部タップであなたの管理人が尻叩きしちゃいます！","設定画面→さぎょいぷ機能ONで数秒ごとにあなたを急かさせていただきます！(バックグラウンドでも動作致します。)"]
     // UIColor(red: /255, green: /255, blue: /255, alpha: 1.0)
     
     let kyoutsuWHITE = UIColor(red: 242/255, green: 241/255, blue: 237/255, alpha: 1.0)

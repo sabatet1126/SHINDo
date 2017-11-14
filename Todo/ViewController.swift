@@ -23,6 +23,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
     @IBOutlet weak var illust2: UIImageView!
     
     @IBOutlet weak var CoachMark: CoachMarkView!
+    @IBOutlet var CoachMarklabel: UILabel!
     @IBOutlet weak var View2: UIView!
     
     //toDOリスト
@@ -52,9 +53,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
             print("初回起動の時だけ呼ばれるよ")
             CoachMark.x = 390
             CoachMark.y = 60
+            CoachMarklabel.text = "右上の+ボタンで予定を追加できます！"
         }else{
             CoachMark.isHidden = true
-            
+            CoachMarklabel.isHidden = true
         }
         
         print("初回起動じゃなくても呼ばれるアプリ起動時の処理だよ")

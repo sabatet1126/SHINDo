@@ -15,6 +15,8 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     
     
     
+    @IBOutlet weak var CoachMark: CoachMarkView!
+    @IBOutlet var CoachMarklabel: UILabel!
     @IBOutlet weak var hometeButton: UIButton!
     @IBOutlet weak var kenashiteButton: UIButton!
     @IBOutlet weak var illust: UIImageView!
@@ -58,6 +60,35 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         hometehaikei.backgroundColor = appDelegate.bColor
         
         kenashitehaikei.backgroundColor = appDelegate.dColor
+        
+        // ここに初期化処理を書く
+        // UserDefaultsを使ってフラグを保持する
+        let userDefault = UserDefaults.standard
+        // "firstLaunch"をキーに、Bool型の値を保持する
+        let dict = ["secondLaunch": true]
+        // デフォルト値登録
+        // ※すでに値が更新されていた場合は、更新後の値のままになる
+        userDefault.register(defaults: dict)
+        
+        // "firstLaunch"に紐づく値がtrueなら(=初回起動)、値をfalseに更新して処理を行う
+        if userDefault.bool(forKey: "secondLaunch") {
+            userDefault.set(false, forKey: "secondLaunch")
+            print("初回起動の時だけ呼ばれるよ")
+            CoachMark.x = 300
+            CoachMark.y = 100
+            CoachMarklabel.text = "右上の+ボタンで予定を追加できます！"
+            
+            //let serifuArray: [String] = appDelegate.secondArray
+           // let index =+1
+           // CoachMarklabel.text = secondArray[index]
+            //  indexを別所で使ってるけどどうするの？
+        }else{
+            CoachMark.isHidden = true
+            CoachMarklabel.isHidden = true
+        }
+        
+        print("初回起動じゃなくても呼ばれるアプリ起動時の処理だよ")
+        
         
         
         print(defaults.object(forKey: "Num"))
