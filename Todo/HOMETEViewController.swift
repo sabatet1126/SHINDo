@@ -22,9 +22,10 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     @IBOutlet weak var illust: UIImageView!
     @IBOutlet var hometehaikei: UIView!
     @IBOutlet var kenashitehaikei: UIView!
-    
+    var index = 0
     var audioPlayer: AVAudioPlayer!
     // バックグラウンドでの音の再生を許可
+    var secondArray: [String] = ["担当画面へようこそ！ここでは上部をタップするとあなたの管理人が持ち上げ、","下部タップであなたの管理人が尻叩きしちゃいます！","設定画面→さぎょいぷ機能ONで数秒ごとにあなたを急かさせていただきます！(バックグラウンドでも動作致します。)"]
     
     
     var defaults: UserDefaults = UserDefaults.standard
@@ -57,6 +58,10 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        CoachMarklabel.text = secondArray[index]
+        CoachMarklabel.numberOfLines = 3
+        CoachMarklabel.lineBreakMode = NSLineBreakMode.byWordWrapping//NSLineBreakByWordWrapping
+        
         hometehaikei.backgroundColor = appDelegate.bColor
         
         kenashitehaikei.backgroundColor = appDelegate.dColor
@@ -72,16 +77,12 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         
         // "firstLaunch"に紐づく値がtrueなら(=初回起動)、値をfalseに更新して処理を行う
         if userDefault.bool(forKey: "secondLaunch") {
-            userDefault.set(false, forKey: "secondLaunch")
+            // userDefault.set(false, forKey: "secondLaunch")
             print("初回起動の時だけ呼ばれるよ")
             CoachMark.x = 300
             CoachMark.y = 100
-            CoachMarklabel.text = "右上の+ボタンで予定を追加できます！"
             
-            //let serifuArray: [String] = appDelegate.secondArray
-           // let index =+1
-           // CoachMarklabel.text = secondArray[index]
-            //  indexを別所で使ってるけどどうするの？
+            
         }else{
             CoachMark.isHidden = true
             CoachMarklabel.isHidden = true
@@ -126,11 +127,11 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         
         if switchBool == true {
             
-   //         if timer == nil{
-                //タイマーをオンにするコード
-                timer = Timer.scheduledTimer(timeInterval: 15.0, target: self, selector:"soundTimer", userInfo: nil,repeats: true)
-                
-    //        }
+            //         if timer == nil{
+            //タイマーをオンにするコード
+            timer = Timer.scheduledTimer(timeInterval: 15.0, target: self, selector:"soundTimer", userInfo: nil,repeats: true)
+            
+            //        }
             
             timer.fire()
         }
@@ -141,7 +142,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         
-       if timer != nil {
+        if timer != nil {
             timer.invalidate()
             
             print("タイマーが空かチェック")
@@ -151,7 +152,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     }
     
     
-   
+    
     
     func soundTimer() {
         //musicDataから音を再生
@@ -242,6 +243,43 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     
     
     @IBAction func homete() {
+        let userDefault = UserDefaults.standard
+        // "firstLaunch"をキーに、Bool型の値を保持する
+        let dict = ["secondLaunch": true]
+        userDefault.register(defaults: dict)
+        
+        if userDefault.bool(forKey: "secondLaunch") {
+            
+            if index == 0 {
+                CoachMark.x = 300
+                CoachMark.y = 500
+                index += 1
+                view.setNeedsUpdateConstraints()
+                print(index)
+                print("ござる")
+            }else if index == 1{
+                CoachMark.x = 300
+                CoachMark.y = 50
+                index += 1
+                view.setNeedsUpdateConstraints()
+                print(index)
+                print("ござる")
+            }else if index == 2{
+                CoachMark.x = 300
+                CoachMark.y = 80
+                index += 1
+                view.setNeedsUpdateConstraints()
+                print(index)
+                print("ござる")
+            }else if index == 3{
+                userDefault.set(false, forKey: "secondLaunch")
+                CoachMark.isHidden = true
+                CoachMarklabel.isHidden = true
+                print(index)
+                print("ござる")
+            }
+            
+        }
         var charaNum:UserDefaults = UserDefaults.standard
         
         var musicDate = MusicData()
@@ -322,7 +360,43 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     }
     
     @IBAction func kenashite() {
+        let userDefault = UserDefaults.standard
+        // "firstLaunch"をキーに、Bool型の値を保持する
+        let dict = ["secondLaunch": true]
+        userDefault.register(defaults: dict)
         
+        if userDefault.bool(forKey: "secondLaunch") {
+            
+            if index == 0 {
+                CoachMark.x = 300
+                CoachMark.y = 500
+                index += 1
+                view.setNeedsUpdateConstraints()
+                print(index)
+                print("ござる")
+            }else if index == 1{
+                CoachMark.x = 300
+                CoachMark.y = 50
+                index += 1
+                view.setNeedsUpdateConstraints()
+                print(index)
+                print("ござる")
+            }else if index == 2{
+                CoachMark.x = 300
+                CoachMark.y = 80
+                index += 1
+                view.setNeedsUpdateConstraints()
+                print(index)
+                print("ござる")
+            }else if index == 3{
+                userDefault.set(false, forKey: "secondLaunch")
+                CoachMark.isHidden = true
+                CoachMarklabel.isHidden = true
+                print(index)
+                print("ござる")
+            }
+            
+        }
         // kenashiteButton.setTitle(" ", for: UIControlState())
         var charaNum:UserDefaults = UserDefaults.standard
         
@@ -375,12 +449,12 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         }
         
         print(musicArr)
-       
+        
         
         var rand = Int(arc4random_uniform(UInt32(musicArr.count-1)))
         print(musicArr[rand])
         
-    
+        
         let soundFilePath:String = Bundle.main.path(forResource: musicArr[rand], ofType: "mp3")!
         
         

@@ -18,7 +18,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
     var audioPlayer: AVAudioPlayer!
     
     @IBOutlet var switchBtn: UISwitch!
-    
+    @IBOutlet weak var CoachMark: CoachMarkView!
+    @IBOutlet var CoachMarklabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +49,15 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
             userDefaults.set(true, forKey: "RANDOM")
         }else {
             userDefaults.set(false, forKey: "RANDOM")
+            
+            //づめまち
+            
+            if userDefaults.bool(forKey: "thirdLaunch") {
+                userDefaults.set(false, forKey: "thirdLaunch")
+                CoachMark.isHidden = true
+                CoachMarklabel.isHidden = true
+            }
+       //     userDefaults.set(false, forKey: "thirdLaunch")
         }
         
     }
@@ -533,7 +543,31 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // ここに初期化処理を書く
+        // UserDefaultsを使ってフラグを保持する
+        let userDefault = UserDefaults.standard
+        // "firstLaunch"をキーに、Bool型の値を保持する
+        let dict = ["thirdLaunch": true]
+        // デフォルト値登録
+        // ※すでに値が更新されていた場合は、更新後の値のままになる
+        userDefault.register(defaults: dict)
+        
+        // "firstLaunch"に紐づく値がtrueなら(=初回起動)、値をfalseに更新して処理を行う
+        if userDefaults.bool(forKey: "thirdLaunch") {
+            userDefaults.set(false, forKey: "thirdLaunch")
+            print("初回起動の時だけ呼ばれるよ")
+            CoachMark.x = 360
+            CoachMark.y = 650
+            CoachMarklabel.text = "ONにすることで担当画面で数秒ごとに尻叩きボイスを聞くことができます！"
+            
+        }else{
+            CoachMark.isHidden = true
+            CoachMarklabel.isHidden = true
+        }
+        
+        print("初回起動じゃなくても呼ばれるアプリ起動時の処理だよ")
     
     
     
@@ -553,4 +587,5 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
      }
      */
     
+}
 }
