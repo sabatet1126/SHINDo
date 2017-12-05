@@ -8,8 +8,29 @@ import UIKit
 class CoachMarkView: UIView {
     
     open var coachMarkRadius = 60.0 as CGFloat
-    open lazy var x : CGFloat = self.bounds.width / 2.0
-    open lazy var y : CGFloat = self.bounds.height / 2.0
+    var coachMarkTargetLayer : CALayer = CALayer()
+    
+    
+    open  var x: CGFloat = 0 {
+        didSet {
+            coachMarkPoint = CGPoint(
+                x: self.x,
+                y: self.y
+            )
+            self.setNeedsDisplay()
+        }
+    }
+    
+    open  var y: CGFloat = 0 {
+        didSet {
+            coachMarkPoint = CGPoint(
+                x: self.x,
+                y: self.y
+            )
+            
+            self.setNeedsDisplay()
+        }
+    }
     
     lazy var coachMarkPoint: CGPoint = {
         return CGPoint(
@@ -39,8 +60,9 @@ class CoachMarkView: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        coachMarkTargetLayer.removeFromSuperlayer()
         
-        let coachMarkTargetLayer = CALayer()
+        coachMarkTargetLayer = CALayer()
         coachMarkTargetLayer.bounds = self.bounds
         coachMarkTargetLayer.position = CGPoint(
             x: self.bounds.width / 2.0,

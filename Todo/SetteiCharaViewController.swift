@@ -11,7 +11,7 @@ import AVFoundation
 class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var userDefaults : UserDefaults = UserDefaults.standard
+    var userDefault : UserDefaults = UserDefaults.standard
     
     var charaNum: UserDefaults = UserDefaults.standard
     
@@ -23,16 +23,38 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if userDefaults.object(forKey:"RANDOM") != nil {
-            let bool:Bool = userDefaults.object(forKey: "RANDOM") as! Bool
+        if userDefault.object(forKey:"RANDOM") != nil {
+            let bool:Bool = userDefault.object(forKey: "RANDOM") as! Bool
             
             switchBtn.setOn(bool, animated: false)
-            
-            
         }else {
             switchBtn.setOn(false, animated: false)
         }
         
+        // ここに初期化処理を書く
+        
+        // "firstLaunch"をキーに、Bool型の値を保持する
+        let dict = ["thirdLaunch": true]
+        // デフォルト値登録
+        // ※すでに値が更新されていた場合は、更新後の値のままになる
+        userDefault.register(defaults: dict)
+        
+        // "firstLaunch"に紐づく値がtrueなら(=初回起動)、値をfalseに更新して処理を行う
+        if userDefault.bool(forKey: "thirdLaunch") {
+            
+            
+            print("初回起動の時だけ呼ばれるよ")
+            CoachMark.x = 360
+            CoachMark.y = 650
+            CoachMarklabel.text = "ONにすることで担当画面で\n数秒ごとに尻叩きボイスを聞くことができます！"
+            CoachMarklabel.numberOfLines = 3
+            CoachMarklabel.lineBreakMode = NSLineBreakMode.byWordWrapping//NSLineBreakByWordWrapping
+            
+
+        }else{
+            CoachMark.isHidden = true
+            CoachMarklabel.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -44,20 +66,26 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func ONOFF(_ sender: UISwitch) {
         //sender.isOn ? "ON":"OFF"
+        print(sender.isOn)
+        
         
         if sender.isOn == true {
-            userDefaults.set(true, forKey: "RANDOM")
-        }else {
-            userDefaults.set(false, forKey: "RANDOM")
-            
-            //づめまち
-            
-            if userDefaults.bool(forKey: "thirdLaunch") {
-                userDefaults.set(false, forKey: "thirdLaunch")
+            if userDefault.bool(forKey: "thirdLaunch") {
+                userDefault.set(false, forKey: "thirdLaunch")
+                print("22222222222222")
                 CoachMark.isHidden = true
                 CoachMarklabel.isHidden = true
             }
-       //     userDefaults.set(false, forKey: "thirdLaunch")
+            userDefault.set(true, forKey: "RANDOM")
+            
+        }else {
+            print("2222")
+            
+            
+            userDefault.set(false, forKey: "RANDOM")
+            
+            
+       //     userDefault.set(false, forKey: "thirdLaunch")
         }
         
     }
@@ -73,8 +101,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.tsubakiarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "tb15", ofType: "mp3")!)
         do {
@@ -98,8 +126,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.utaarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "u20", ofType: "mp3")!)
         do {
@@ -123,8 +151,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.honokaarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "tutumi020", ofType: "mp3")!)
         do {
@@ -147,8 +175,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.veronicaarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "ve16", ofType: "mp3")!)
         do {
@@ -169,8 +197,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         
         
         appDelegate.textArray = appDelegate.chanditharray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         
         
@@ -205,8 +233,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.soniaarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "SNA-12", ofType: "mp3")!)
         do {
@@ -229,8 +257,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.hibariarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "HBR-14", ofType: "mp3")!)
         do {
@@ -256,8 +284,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.amenomiyaarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "am-20", ofType: "mp3")!)
@@ -282,8 +310,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.soujiarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "souji16", ofType: "mp3")!)
         do {
@@ -307,8 +335,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.kotaroarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "ko15", ofType: "mp3")!)
         do {
@@ -332,8 +360,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.minatoarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "11A", ofType: "mp3")!)
         do {
@@ -357,8 +385,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.issikiarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "ISK-20", ofType: "mp3")!)
         do {
@@ -382,8 +410,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.akutsuarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "ak16", ofType: "mp3")!)
         do {
@@ -407,8 +435,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.nottinghamarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "ntg-16", ofType: "mp3")!)
         do {
@@ -432,8 +460,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.noaarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "n_20_A", ofType: "mp3")!)
         do {
@@ -456,8 +484,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.yurichikaarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Y20", ofType: "mp3")!)
         do {
@@ -480,8 +508,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.kaitoarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "B20", ofType: "mp3")!)
         do {
@@ -504,8 +532,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.oliverarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "o_20", ofType: "mp3")!)
         do {
@@ -528,8 +556,8 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         present(alertController, animated: true, completion: nil)
         
         appDelegate.textArray = appDelegate.ryujiarray
-        userDefaults.set(appDelegate.textArray,forKey: "serifu")
-        userDefaults.synchronize()
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
         
         let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "k20", ofType: "mp3")!)
         do {
@@ -545,27 +573,7 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        // ここに初期化処理を書く
-        // UserDefaultsを使ってフラグを保持する
-        let userDefault = UserDefaults.standard
-        // "firstLaunch"をキーに、Bool型の値を保持する
-        let dict = ["thirdLaunch": true]
-        // デフォルト値登録
-        // ※すでに値が更新されていた場合は、更新後の値のままになる
-        userDefault.register(defaults: dict)
-        
-        // "firstLaunch"に紐づく値がtrueなら(=初回起動)、値をfalseに更新して処理を行う
-        if userDefaults.bool(forKey: "thirdLaunch") {
-            userDefaults.set(false, forKey: "thirdLaunch")
-            print("初回起動の時だけ呼ばれるよ")
-            CoachMark.x = 360
-            CoachMark.y = 650
-            CoachMarklabel.text = "ONにすることで担当画面で数秒ごとに尻叩きボイスを聞くことができます！"
-            
-        }else{
-            CoachMark.isHidden = true
-            CoachMarklabel.isHidden = true
-        }
+       
         
         print("初回起動じゃなくても呼ばれるアプリ起動時の処理だよ")
     

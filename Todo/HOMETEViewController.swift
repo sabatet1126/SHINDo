@@ -25,7 +25,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     var index = 0
     var audioPlayer: AVAudioPlayer!
     // バックグラウンドでの音の再生を許可
-    var secondArray: [String] = ["担当画面へようこそ！ここでは上部をタップするとあなたの管理人が持ち上げ、","下部タップであなたの管理人が尻叩きしちゃいます！","設定画面→さぎょいぷ機能ONで数秒ごとにあなたを急かさせていただきます！(バックグラウンドでも動作致します。)"]
+    var secondArray: [String] = ["担当画面へようこそ！\nここでは上部をタップすると\nあなたの管理人が持ち上げ、","下部タップであなたの管理人が\n尻叩きしちゃいます！","設定画面→さぎょいぷ機能ONで\n数秒ごとにあなたを急かさせていただきます！\n(バックグラウンドでも動作致します。)"]
     
     
     var defaults: UserDefaults = UserDefaults.standard
@@ -58,17 +58,11 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        CoachMarklabel.text = secondArray[index]
-        CoachMarklabel.numberOfLines = 3
-        CoachMarklabel.lineBreakMode = NSLineBreakMode.byWordWrapping//NSLineBreakByWordWrapping
         
         hometehaikei.backgroundColor = appDelegate.bColor
-        
         kenashitehaikei.backgroundColor = appDelegate.dColor
+       let userDefault = UserDefaults.standard
         
-        // ここに初期化処理を書く
-        // UserDefaultsを使ってフラグを保持する
-        let userDefault = UserDefaults.standard
         // "firstLaunch"をキーに、Bool型の値を保持する
         let dict = ["secondLaunch": true]
         // デフォルト値登録
@@ -81,6 +75,14 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
             print("初回起動の時だけ呼ばれるよ")
             CoachMark.x = 300
             CoachMark.y = 100
+            
+            // ここに初期化処理を書く
+            CoachMarklabel.text = secondArray[index]
+            CoachMarklabel.numberOfLines = 3
+            CoachMarklabel.lineBreakMode = NSLineBreakMode.byWordWrapping//NSLineBreakByWordWrapping
+            
+            // UserDefaultsを使ってフラグを保持する
+            
             
             
         }else{
@@ -254,22 +256,22 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
                 CoachMark.x = 300
                 CoachMark.y = 500
                 index += 1
-                view.setNeedsUpdateConstraints()
                 print(index)
+                CoachMarklabel.text  = secondArray[0]
                 print("ござる")
             }else if index == 1{
                 CoachMark.x = 300
-                CoachMark.y = 50
+                CoachMark.y = 100
                 index += 1
-                view.setNeedsUpdateConstraints()
                 print(index)
+                CoachMarklabel.text  = secondArray[1]
                 print("ござる")
             }else if index == 2{
-                CoachMark.x = 300
-                CoachMark.y = 80
+                CoachMark.x = 200
+                CoachMark.y = 500
                 index += 1
-                view.setNeedsUpdateConstraints()
                 print(index)
+                CoachMarklabel.text  = secondArray[2]
                 print("ござる")
             }else if index == 3{
                 userDefault.set(false, forKey: "secondLaunch")
@@ -371,23 +373,23 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
                 CoachMark.x = 300
                 CoachMark.y = 500
                 index += 1
-                view.setNeedsUpdateConstraints()
                 print(index)
+                CoachMarklabel.text  = secondArray[0] as String!
                 print("ござる")
             }else if index == 1{
                 CoachMark.x = 300
-                CoachMark.y = 50
+                CoachMark.y = 100
                 index += 1
-                view.setNeedsUpdateConstraints()
                 print(index)
+                CoachMarklabel.text  = secondArray[1] as String!
                 print("ござる")
             }else if index == 2{
-                CoachMark.x = 300
-                CoachMark.y = 80
+                CoachMark.x = 200
+                CoachMark.y = 500
                 index += 1
-                view.setNeedsUpdateConstraints()
                 print(index)
                 print("ござる")
+                CoachMarklabel.text  = secondArray[2] as String!
             }else if index == 3{
                 userDefault.set(false, forKey: "secondLaunch")
                 CoachMark.isHidden = true

@@ -51,7 +51,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
         if userDefault.bool(forKey: "firstLaunch") {
             userDefault.set(false, forKey: "firstLaunch")
             print("初回起動の時だけ呼ばれるよ")
-            CoachMark.x = 400
+            CoachMark.x = 420
             CoachMark.y = 60
             CoachMarklabel.text = "右上の+ボタンで予定を追加できます！"
         }else{
