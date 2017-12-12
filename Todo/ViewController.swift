@@ -15,6 +15,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
     
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let myBoundSize: CGSize = UIScreen.main.bounds.size
     var colorData : UserDefaults = UserDefaults.standard
     var defaults: UserDefaults = UserDefaults.standard
     var audioPlayer: AVAudioPlayer!
@@ -51,9 +52,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
         if userDefault.bool(forKey: "firstLaunch") {
             userDefault.set(false, forKey: "firstLaunch")
             print("初回起動の時だけ呼ばれるよ")
-            CoachMark.x = 420
-            CoachMark.y = 60
-            CoachMarklabel.text = "右上の+ボタンで予定を追加できます！"
+            CoachMark.x = 1.0*(UIScreen.main.bounds.size.width)
+            CoachMark.y = 0.1*(UIScreen.main.bounds.size.height)
+            CoachMark.coachMarkRadius = 80
+            CoachMarklabel.numberOfLines = 3
+           CoachMarklabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            CoachMarklabel.text = "右上の+ボタンで予定を追加できます！\n 予定は右スライドで完了/削除が選べます。"
         }else{
             CoachMark.isHidden = true
             CoachMarklabel.isHidden = true

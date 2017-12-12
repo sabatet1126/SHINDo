@@ -44,9 +44,11 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
             
             
             print("初回起動の時だけ呼ばれるよ")
-            CoachMark.x = 360
-            CoachMark.y = 650
-            CoachMarklabel.text = "ONにすることで担当画面で\n数秒ごとに尻叩きボイスを聞くことができます！"
+            CoachMark.x = 0.8*(UIScreen.main.bounds.size.width)
+            CoachMark.y = 0.9*(UIScreen.main.bounds.size.height)
+        //    CoachMark.x = 360
+       //     CoachMark.y = 650
+            CoachMarklabel.text = "ONにすることで担当画面で\n数秒ごとに尻叩きボイスを聞くことができます！\n(バックグラウンドでも動作致します。)"
             CoachMarklabel.numberOfLines = 3
             CoachMarklabel.lineBreakMode = NSLineBreakMode.byWordWrapping//NSLineBreakByWordWrapping
             

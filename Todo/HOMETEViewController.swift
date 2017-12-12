@@ -73,8 +73,8 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         if userDefault.bool(forKey: "secondLaunch") {
             // userDefault.set(false, forKey: "secondLaunch")
             print("初回起動の時だけ呼ばれるよ")
-            CoachMark.x = 300
-            CoachMark.y = 100
+            CoachMark.x = 0.5*(UIScreen.main.bounds.size.width)
+            CoachMark.y = 0.2*(UIScreen.main.bounds.size.height)
             
             // ここに初期化処理を書く
             CoachMarklabel.text = secondArray[index]
@@ -253,22 +253,22 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         if userDefault.bool(forKey: "secondLaunch") {
             
             if index == 0 {
-                CoachMark.x = 300
-                CoachMark.y = 500
+                CoachMark.x = 0.5*(UIScreen.main.bounds.size.width)
+                CoachMark.y = 0.6*(UIScreen.main.bounds.size.height)
                 index += 1
                 print(index)
                 CoachMarklabel.text  = secondArray[0]
                 print("ござる")
             }else if index == 1{
-                CoachMark.x = 300
-                CoachMark.y = 100
+                CoachMark.x = 0.5*(UIScreen.main.bounds.size.width)
+                CoachMark.y = 0.2*(UIScreen.main.bounds.size.height)
                 index += 1
                 print(index)
                 CoachMarklabel.text  = secondArray[1]
                 print("ござる")
             }else if index == 2{
-                CoachMark.x = 200
-                CoachMark.y = 500
+                CoachMark.x = 0.5*(UIScreen.main.bounds.size.width)
+                CoachMark.y = 0.6*(UIScreen.main.bounds.size.height)
                 index += 1
                 print(index)
                 CoachMarklabel.text  = secondArray[2]
@@ -370,22 +370,22 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
         if userDefault.bool(forKey: "secondLaunch") {
             
             if index == 0 {
-                CoachMark.x = 300
-                CoachMark.y = 500
+                CoachMark.x = 0.5*(UIScreen.main.bounds.size.width)
+                CoachMark.y = 0.6*(UIScreen.main.bounds.size.height)
                 index += 1
                 print(index)
                 CoachMarklabel.text  = secondArray[0] as String!
                 print("ござる")
             }else if index == 1{
-                CoachMark.x = 300
-                CoachMark.y = 100
+                CoachMark.x = 0.5*(UIScreen.main.bounds.size.width)
+                CoachMark.y = 0.2*(UIScreen.main.bounds.size.height)
                 index += 1
                 print(index)
                 CoachMarklabel.text  = secondArray[1] as String!
                 print("ござる")
             }else if index == 2{
-                CoachMark.x = 200
-                CoachMark.y = 500
+                CoachMark.x = 0.5*(UIScreen.main.bounds.size.width)
+                CoachMark.y = 0.6*(UIScreen.main.bounds.size.height)
                 index += 1
                 print(index)
                 print("ござる")
