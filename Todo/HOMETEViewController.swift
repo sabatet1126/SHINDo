@@ -86,7 +86,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
             
             
         }else{
-            CoachMark.isHidden = true
+            self.view.viewWithTag(1)?.removeFromSuperview()
             CoachMarklabel.isHidden = true
         }
         
@@ -275,8 +275,8 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
                 print("ござる")
             }else if index == 3{
                 userDefault.set(false, forKey: "secondLaunch")
-                CoachMark.isHidden = true
                 CoachMarklabel.isHidden = true
+                self.view.viewWithTag(1)?.removeFromSuperview()
                 print(index)
                 print("ござる")
             }
@@ -392,7 +392,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
                 CoachMarklabel.text  = secondArray[2] as String!
             }else if index == 3{
                 userDefault.set(false, forKey: "secondLaunch")
-                CoachMark.isHidden = true
+                self.view.viewWithTag(1)?.removeFromSuperview()
                 CoachMarklabel.isHidden = true
                 print(index)
                 print("ござる")

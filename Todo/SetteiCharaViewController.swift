@@ -56,6 +56,7 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         }else{
             CoachMark.isHidden = true
             CoachMarklabel.isHidden = true
+            self.view.viewWithTag(1)?.removeFromSuperview()
         }
         // Do any additional setup after loading the view.
     }
@@ -77,6 +78,7 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
                 print("22222222222222")
                 CoachMark.isHidden = true
                 CoachMarklabel.isHidden = true
+                self.view.viewWithTag(1)?.removeFromSuperview()
             }
             userDefault.set(true, forKey: "RANDOM")
             

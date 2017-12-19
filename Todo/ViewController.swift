@@ -56,10 +56,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
             CoachMark.y = 0.1*(UIScreen.main.bounds.size.height)
             CoachMark.coachMarkRadius = 80
             CoachMarklabel.numberOfLines = 3
-           CoachMarklabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            CoachMarklabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             CoachMarklabel.text = "右上の+ボタンで予定を追加できます！\n 予定は右スライドで完了/削除が選べます。"
         }else{
-            CoachMark.isHidden = true
+           self.view.viewWithTag(1)?.removeFromSuperview()
             CoachMarklabel.isHidden = true
         }
         
