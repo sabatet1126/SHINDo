@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="03SmartFontUI.ttf">
+        <array key="UI.ttf">
             <string>03SmartFontUI</string>
         </array>
     </customFonts>
@@ -591,7 +591,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iA0-9y-WKM" userLabel="oliver">
                                 <rect key="frame" x="225" y="386.5" width="124" height="40"/>
                                 <color key="backgroundColor" red="0.31027644230000001" green="0.036782418099999999" blue="0.066062172429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="nothingum" image="c-oliver.png">
+                                <state key="normal" title="nothingum" image="c_oliver.png">
                                     <color key="titleColor" red="0.97852723320000001" green="0.98594170189999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -601,7 +601,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Du-bx-huV" userLabel="kaito">
                                 <rect key="frame" x="225" y="426.5" width="124" height="40"/>
                                 <color key="backgroundColor" red="0.31027644230000001" green="0.036782418099999999" blue="0.066062172429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="nothingum" image="c-kaito.png">
+                                <state key="normal" title="nothingum" image="c_kaito.png">
                                     <color key="titleColor" red="0.97852723320000001" green="0.98594170189999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -672,7 +672,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3i-gq-jsb" userLabel="yurichika">
                                 <rect key="frame" x="26.5" y="426.5" width="123.5" height="40"/>
                                 <color key="backgroundColor" red="0.31027644230000001" green="0.036782418099999999" blue="0.066062172429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="nothingum" image="c-yurichika.png">
+                                <state key="normal" title="nothingum" image="c_yurichika.png">
                                     <color key="titleColor" red="0.97852723320000001" green="0.98594170189999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -692,7 +692,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lj-Zg-ZSq" userLabel="ryuji">
                                 <rect key="frame" x="225" y="466.5" width="124" height="40"/>
                                 <color key="backgroundColor" red="0.31027644230000001" green="0.036782418099999999" blue="0.066062172429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="nothingum" image="c-ryuji.png">
+                                <state key="normal" title="nothingum" image="c_ryuji.png">
                                     <color key="titleColor" red="0.97852723320000001" green="0.98594170189999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1279,25 +1279,25 @@
         <image name="Twitter_Logo_White_On_Blue.png" width="400" height="400"/>
         <image name="akutsu.png" width="700" height="200"/>
         <image name="amenomiya.png" width="700" height="200"/>
-        <image name="c-kaito.png" width="700" height="200"/>
-        <image name="c-oliver.png" width="700" height="200"/>
-        <image name="c-ryuji.png" width="700" height="200"/>
-        <image name="c-yurichika.png" width="700" height="200"/>
         <image name="c_akutsu.png" width="700" height="200"/>
         <image name="c_amenomiya.png" width="700" height="200"/>
         <image name="c_chandith.png" width="700" height="200"/>
         <image name="c_hibari.png" width="700" height="200"/>
         <image name="c_issiki.png" width="700" height="200"/>
+        <image name="c_kaito.png" width="700" height="200"/>
         <image name="c_kotaro.png" width="700" height="200"/>
         <image name="c_minato.png" width="700" height="200"/>
         <image name="c_noa.png" width="700" height="200"/>
         <image name="c_notthingham.png" width="700" height="300"/>
+        <image name="c_oliver.png" width="700" height="200"/>
+        <image name="c_ryuji.png" width="700" height="200"/>
         <image name="c_sonia.png" width="700" height="200"/>
         <image name="c_souji.png" width="700" height="200"/>
         <image name="c_tsubaki.png" width="700" height="200"/>
         <image name="c_tsutsumi.png" width="700" height="200"/>
         <image name="c_uta.png" width="700" height="200"/>
         <image name="c_veronica.png" width="700" height="200"/>
+        <image name="c_yurichika.png" width="700" height="200"/>
         <image name="chandith.png" width="700" height="200"/>
         <image name="firstTab" width="29" height="29"/>
         <image name="fukidashi.png" width="1200" height="600"/>

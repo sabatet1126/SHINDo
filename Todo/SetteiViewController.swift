@@ -28,7 +28,7 @@ class SetteiViewCountroller: UIViewController {
     var TWEETtext = ["ーーさんの進捗は私が監視させていただいています！...一緒に頑張るわよ。　appstoreURL","ーーの作業進捗、あたしが監視してるよ。さっさと仕上げよ。　appstoreURL","ーーさんは作業を頑張ってますよ...ね？そうよね？　appstoreURL","ーー、作業、頑張ってるから、応援したげてね...! appstoreURL","ーーちゃん、作業頑張ってまーす！いぇーい！　appstoreURL","ーーちゃんちゃんと作業進ませてるよ〜、ほんとだよ〜！...たぶん...? appstore","んもぅーーちゃん作業やってる？サボってたら容赦無く咎めなさいよ。やっちゃいなさい。　appstoreURL","ーーくんの作業は僕が監視しています。サボるようなら許しませんよ！　appstoreURL","ーーは絶賛作業中だ。みんなも監視よろしく頼んだぞ。　appstore","えええっと！ーーさんのし、進捗は僕が管理させていただきます！お、終わらせましょう！　appstore","ーーは作業頑張ってるみたいだけど...まあ、終わらせられるはずだよね〜？　appstore","...ーーさんは、作業中です。...みなさんも応援宜しくお願いします...。　appstoreURL","あー、ーーは作業中だから、みんなもサボってたら適度に急かしてやれよー。よろしくー。　appstore","みなさん！ーー様は作業を頑張っておられます！どうか応援のほどよろしくお願いいたします！ appstoreURL"]
     
     @IBAction func tweet(){
-    
+    print("押されてはいる")
         if let NAME = charaNum.object(forKey: "NAME") as? String, let _ = charaNum.object(forKey: "Num") {
             var text:String=""
             
