@@ -205,13 +205,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return Twitter.sharedInstance().application(app, open: url, options: options)
+      //  return Twitter.sharedInstance().application(app, open: url, options: options)
         
+        if Twitter.sharedInstance().application(app, open: url, options: options) {
+            return true
+        }
+        // Your other open URL handlers follow […]
     }
     
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+      
+        Twitter.sharedInstance().start(withConsumerKey: "NbHDnW641mkHFMC3CEWiBo0v5", consumerSecret: "  fMidgUOsNZ1f1WgGKw7GvCQtB1L27kCotPGiXYst7r0HGBcNKl")
+        return true
         
                 UNUserNotificationCenter.current().delegate = self
         
@@ -224,7 +231,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                 colorData.set(0, forKey: "Num")}
         }
         
-        Twitter.sharedInstance().start(withConsumerKey:"NbHDnW641mkHFMC3CEWiBo0v5", consumerSecret:"fMidgUOsNZ1f1WgGKw7GvCQtB1L27kCotPGiXYst7r0HGBcNKl")
+  //      Twitter.sharedInstance().start(withConsumerKey:"NbHDnW641mkHFMC3CEWiBo0v5", consumerSecret:"fMidgUOsNZ1f1WgGKw7GvCQtB1L27kCotPGiXYst7r0HGBcNKl")
         
         
         if let notification = launchOptions?[UIApplicationLaunchOptionsKey.localNotification] as? UILocalNotification,let userInfo = notification.userInfo{
@@ -593,6 +600,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
             }
         }
     }
+    
+    
     
 }
 
