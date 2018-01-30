@@ -18,12 +18,13 @@
 	<string>1.1.7</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+    
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>twitterkit-{NbHDnW641mkHFMC3CEWiBo0v5}</string>
+                <string>twitterkit-NbHDnW641mkHFMC3CEWiBo0v5</string>
             </array>
         </dict>
     </array>

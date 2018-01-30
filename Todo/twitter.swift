@@ -14,49 +14,64 @@ class TwitterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let store = Twitter.sharedInstance().sessionStore
-        if let lastSession = store.session() {
+        
+       // let store = Twitter.sharedInstance().sessionStore
+        if !TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
+        
+        
+//           let alertController = UIAlertController(title: "登録済", message: "twitterは登録済みです。", preferredStyle: .alert)
+//            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
+//                // ボタンが押された時の処理を書く（クロージャ実装）
+//                (action: UIAlertAction!) -> Void in
+//                self.navigationController?.popViewController(animated: true)
+//            })
+//
+//            let cancelAction: UIAlertAction = UIAlertAction(title: "ログアウト", style: UIAlertActionStyle.cancel, handler:{
+//                // ボタンが押された時の処理を書く（クロージャ実装）
+//                (action: UIAlertAction!) -> Void in
+//                let store = TWTRTwitter.sharedInstance().sessionStore
+//
+//                if let userID = store.session()?.userID {
+//                    store.logOutUserID(userID)
+//                    self.saveData.removeObject(forKey: "NAME")
+//                }
+//                print("Cancel")
+//                self.navigationController?.popViewController(animated: true)
+//
+//            })
+//            alertController.addAction(ok)
+//            alertController.addAction(cancelAction)
+//
+//
+//            present(alertController, animated: true, completion: nil)
+//
+//            let client = TWTRAPIClient()
+//            client.loadUser(withID: lastSession.userID) { (user, error) -> Void in
+//                print(user)
+//                if let user = user {
+//                    self.saveData.set(user.name,forKey: "NAME")
+//                    self.saveData.synchronize()
+//                }
+//
+//                if let error = error {
+//                    print(error)
+//                }
+//            }
+//        } else {
             
-           let alertController = UIAlertController(title: "登録済", message: "twitterは登録済みです。", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
-                // ボタンが押された時の処理を書く（クロージャ実装）
-                (action: UIAlertAction!) -> Void in
-                self.navigationController?.popViewController(animated: true)
-            })
-
-            let cancelAction: UIAlertAction = UIAlertAction(title: "ログアウト", style: UIAlertActionStyle.cancel, handler:{
-                // ボタンが押された時の処理を書く（クロージャ実装）
-                (action: UIAlertAction!) -> Void in
-                let store = Twitter.sharedInstance().sessionStore
-                
-                if let userID = store.session()?.userID {
-                    store.logOutUserID(userID)
-                    self.saveData.removeObject(forKey: "NAME")
+            TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
+                if (session != nil) {
+                    print("signed in as \(session?.userName)");
+                } else {
+                    print("error: \(error?.localizedDescription)");
                 }
-                print("Cancel")
-                self.navigationController?.popViewController(animated: true)
-
-            })
-            alertController.addAction(ok)
-            alertController.addAction(cancelAction)
-            
-            
-            present(alertController, animated: true, completion: nil)
-            
-            let client = TWTRAPIClient()
-            client.loadUser(withID: lastSession.userID) { (user, error) -> Void in
-                print(user)
-                if let user = user {
-                    self.saveData.set(user.name,forKey: "NAME")
-                    self.saveData.synchronize()
-                }
-                
                 if let error = error {
                     print(error)
                 }
-            }
-        } else {
-            let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            })
+            
+            
+   /*         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
                 if let session = session {
                     let client = TWTRAPIClient()
                     let id = session.userID
@@ -79,6 +94,7 @@ class TwitterViewController: UIViewController {
             //      logInButton.layer.position = CGPoint(x: self.view.frame.width/2, y:100)
             logInButton.center = self.view.center
             self.view.addSubview(logInButton)
+            */
         }
         
 

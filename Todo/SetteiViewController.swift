@@ -27,70 +27,81 @@ class SetteiViewCountroller: UIViewController {
     
     var TWEETtext = ["ーーさんの進捗は私が監視させていただいています！...一緒に頑張るわよ。　appstoreURL","ーーの作業進捗、あたしが監視してるよ。さっさと仕上げよ。　appstoreURL","ーーさんは作業を頑張ってますよ...ね？そうよね？　appstoreURL","ーー、作業、頑張ってるから、応援したげてね...! appstoreURL","ーーちゃん、作業頑張ってまーす！いぇーい！　appstoreURL","ーーちゃんちゃんと作業進ませてるよ〜、ほんとだよ〜！...たぶん...? appstore","んもぅーーちゃん作業やってる？サボってたら容赦無く咎めなさいよ。やっちゃいなさい。　appstoreURL","ーーくんの作業は僕が監視しています。サボるようなら許しませんよ！　appstoreURL","ーーは絶賛作業中だ。みんなも監視よろしく頼んだぞ。　appstore","えええっと！ーーさんのし、進捗は僕が管理させていただきます！お、終わらせましょう！　appstore","ーーは作業頑張ってるみたいだけど...まあ、終わらせられるはずだよね〜？　appstore","...ーーさんは、作業中です。...みなさんも応援宜しくお願いします...。　appstoreURL","あー、ーーは作業中だから、みんなもサボってたら適度に急かしてやれよー。よろしくー。　appstore","みなさん！ーー様は作業を頑張っておられます！どうか応援のほどよろしくお願いいたします！ appstoreURL"]
     
-    @IBAction func tweet(){
-    print("押されてはいる")
-        if let NAME = charaNum.object(forKey: "NAME") as? String, let _ = charaNum.object(forKey: "Num") {
-            var text:String=""
+    @IBAction func twitterAction(){
+        if !TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
+            print("ろぐいんなのにゃ")
+            TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
+                if (session != nil) {
+                    print("signed in as \(session?.userName)");
+                } else {
+                    print("error: \(error?.localizedDescription)");
+                }
+            })
+    
+        }else{
+            print("つぶやくのにゃ")
+            if let NAME = charaNum.object(forKey: "NAME") as? String, let _ = charaNum.object(forKey: "Num") {
+                var text:String=""
+                
+                
+                
+                if charaNum.object(forKey: "Num") as! Int == 0 {
+                    text = "\(NAME)さんの進捗は私が監視させていただいています！...一緒に頑張るわよ。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 1{
+                    text = "\(NAME)の作業進捗、あたしが監視してるよ。さっさと仕上げよ。【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 2{
+                    text = "\(NAME)さんは作業を頑張ってますよ...ね？そうよね？　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 3{
+                    text = "\(NAME)、作業、頑張ってるから、応援したげてね...! 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 4{
+                    text = "\(NAME)ちゃん、作業頑張ってまーす！いぇーい！　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 5{
+                    text = "\(NAME)ちゃんちゃんと作業進ませてるよ〜、ほんとだよ〜！...たぶん...? 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 6{
+                    text = "もう、\(NAME)ちゃん作業やってる？サボってたら容赦無く咎めなさいよ。やっちゃいなさい。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 7{
+                    text = "\(NAME)くんの作業は僕が監視しています。サボるようなら許しませんよ！　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 8{
+                    text = "\(NAME)は絶賛作業中だ。みんなも監視よろしく頼んだぞ。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 9{
+                    text = "えええっと！\(NAME)さんのし、進捗は僕が管理させていただきます！お、終わらせましょう！　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 10{
+                    text = "\(NAME)は作業頑張ってるみたいだけど...まあ、終わらせられるはずだよね〜？　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 11{
+                    text = "...\(NAME)さんは、作業中です。...みなさんも応援宜しくお願いします...。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 12{
+                    text = "あー、\(NAME)は作業中だから、みんなもサボってたら適度に急かしてやれよー。よろしくー。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 13{
+                    text = "みなさん！\(NAME)様は作業を頑張っておられます！どうか応援のほどよろしくお願い致します。 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 14{
+                    text = "\(NAME)さんは現在作業中です。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 15{
+                    text = "あはは〜、\(NAME)ちゃん、本当に時間内に終わるのかな？　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 16{
+                    text = "ああ、\(NAME)さんは今絶賛作業中ですよ。終わりますかねえ、ひひひっ　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 17{
+                    text = "\(NAME)さん、今は絶賛作業中です！応援宜しくお願いしますね！【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 18{
+                    text = "おい、今\(NAME)は作業中なんだ！いい具合にほっといてやれよな！ 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }
+            let composer = TWTRComposer()
+            composer.setText("\(text)")
+            composer.show(from: self, completion: nil)
             
-           
-            
-            if charaNum.object(forKey: "Num") as! Int == 0 {
-                text = "\(NAME)さんの進捗は私が監視させていただいています！...一緒に頑張るわよ。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 1{
-                text = "\(NAME)の作業進捗、あたしが監視してるよ。さっさと仕上げよ。【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 2{
-                text = "\(NAME)さんは作業を頑張ってますよ...ね？そうよね？　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 3{
-                text = "\(NAME)、作業、頑張ってるから、応援したげてね...! 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 4{
-                text = "\(NAME)ちゃん、作業頑張ってまーす！いぇーい！　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 5{
-                text = "\(NAME)ちゃんちゃんと作業進ませてるよ〜、ほんとだよ〜！...たぶん...? 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 6{
-                text = "もう、\(NAME)ちゃん作業やってる？サボってたら容赦無く咎めなさいよ。やっちゃいなさい。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 7{
-                text = "\(NAME)くんの作業は僕が監視しています。サボるようなら許しませんよ！　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 8{
-                text = "\(NAME)は絶賛作業中だ。みんなも監視よろしく頼んだぞ。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 9{
-                text = "えええっと！\(NAME)さんのし、進捗は僕が管理させていただきます！お、終わらせましょう！　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 10{
-                text = "\(NAME)は作業頑張ってるみたいだけど...まあ、終わらせられるはずだよね〜？　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 11{
-                text = "...\(NAME)さんは、作業中です。...みなさんも応援宜しくお願いします...。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 12{
-                text = "あー、\(NAME)は作業中だから、みんなもサボってたら適度に急かしてやれよー。よろしくー。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 13{
-                text = "みなさん！\(NAME)様は作業を頑張っておられます！どうか応援のほどよろしくお願い致します。 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 14{
-                text = "\(NAME)さんは現在作業中です。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 15{
-                text = "あはは〜、\(NAME)ちゃん、本当に時間内に終わるのかな？　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 16{
-                text = "ああ、\(NAME)さんは今絶賛作業中ですよ。終わりますかねえ、ひひひっ　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 17{
-                text = "\(NAME)さん、今は絶賛作業中です！応援宜しくお願いしますね！【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }else if charaNum.object(forKey: "Num") as! Int == 18{
-                text = "おい、今\(NAME)は作業中なんだ！いい具合にほっといてやれよな！ 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
-            }
-            
-            let composeViewController: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
+   /*         let composeViewController: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
             composeViewController.setInitialText(text)
             
             self.present(composeViewController, animated: true, completion: nil)
-            
-        }else{
-            let alertController = UIAlertController(title: "アカウント認証", message: "Twitterアカウントを認証して下さい", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(defaultAction)
-            present(alertController, animated: true, completion: nil)
-
+   */
+        
         }
         
 
         
         
     
+        
+        }
         
     }
     
@@ -135,7 +146,7 @@ class SetteiViewCountroller: UIViewController {
     }
         // Do any additional setup after loading the view.
     func twitterButtonColor() {
-        if let session = Twitter.sharedInstance().sessionStore.session() {
+        if TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
             twitterButton.alpha = 0.5
         }else{
             twitterButton.alpha = 1

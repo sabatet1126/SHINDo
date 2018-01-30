@@ -346,7 +346,7 @@
                                     <color key="titleColor" red="1" green="0.99703430729999998" blue="0.99145291280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JoD-DK-yxx" kind="push" id="FTx-vh-lnb"/>
+                                    <action selector="twitterAction" destination="BeR-Wi-1Xh" eventType="touchUpInside" id="CUh-6l-33P"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Db-7M-ygG">
@@ -373,9 +373,6 @@
                                 <state key="normal" title="TWEET">
                                     <color key="titleColor" red="1" green="0.99703430734498366" blue="0.99145291281957348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="tweet" destination="BeR-Wi-1Xh" eventType="touchUpInside" id="B6w-Un-ilH"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -406,7 +403,7 @@
                     <connections>
                         <outlet property="charaButton" destination="5Db-7M-ygG" id="G36-RN-CXx"/>
                         <outlet property="colorButton" destination="6oR-uN-kbo" id="TlD-Hu-Pep"/>
-                        <outlet property="tweetButton" destination="ptr-ZE-bDg" id="Gh4-dO-eio"/>
+                        <outlet property="tweetButton" destination="ptr-ZE-bDg" id="F57-JG-1sM"/>
                         <outlet property="twitterButton" destination="iEm-B2-nCb" id="FKe-8m-mY6"/>
                         <outlet property="twitterLabel" destination="24B-to-Wfv" id="2pw-mH-ecz"/>
                         <outlet property="webButton" destination="Tgg-ZP-eL7" id="8BP-m5-Gn8"/>

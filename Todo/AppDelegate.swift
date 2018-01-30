@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     var dColor = UIColor(red: 3/255, green: 56/255, blue: 96/255, alpha: 1.0)
     var eColor = UIColor(red: 39/255, green: 48/255, blue: 67/255, alpha: 1.0)
     var fColor = UIColor(red: 226/255, green: 223/255, blue: 211/255, alpha: 1.0)
-
+    
     var colorIndex = 0
     
     var textArray: [String] = ["終わった？", "無理しないでやって頂戴。", "集中して取り組みなさいよ","体調管理はしっかりしなさいよ。","休憩時間も必要ね","過度な労働はダメよ","進捗はどうかしら","作業はどうしたの？","休憩もほどほどに！","私も頑張るから..."]
@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     let chandithGREEN = UIColor(red: 107/255, green: 241/255, blue: 120/255, alpha: 1.0)
     let chandithblue = UIColor(red: 53/255, green: 167/255, blue: 225/255, alpha: 1.0)
     let chandithBack = UIColor(red: 237/255, green: 255/255, blue: 168/255, alpha: 1.0)
-
+    
     let chanditharray = ["大丈夫大丈夫〜！","おわるおわるって〜！","君はできる子だよぉ！","へーきへーき、いける！","終わったん？","やってりゃおわるよ！","進捗どう？","無理しちゃだめだかんね","うおおー！終わらせるぞおー！","集中してガーっとやっちゃおう！"]
     
     let soniaWINE = UIColor(red: 85/255, green: 5/255, blue: 39/255, alpha: 1.0)
@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     let soniaVIORET = UIColor(red: 169/255, green: 63/255, blue: 85/255, alpha: 1.0)
     let soniaBLACK = UIColor(red: 25/255, green: 50/255, blue: 60/255, alpha: 1.0)
     let soniaBack = UIColor(red: 244/255, green: 193/255, blue: 197/255, alpha: 1.0)
-
+    
     let soniaarray = ["休んじゃおうよォ、やってばっかじゃ疲れるじゃん！","休憩休憩！楽しいことしよォ","いーじゃん、ちょっとぐらい休んでも許されるってェ","君は頑張ってるよ、休も休も！","進捗？んなもんなんとかなるなる！","楽しいことたくさんしちゃお〜","ゲームして、寝て、遊んじゃお！","ケセラセラ、なんとかなるなる〜","楽すんのは、楽しいよ〜","明日は明日の風が吹く！"]
     
     let hibariWHITE = UIColor(red: 251/255, green: 254/255, blue: 249/255, alpha: 1.0)
@@ -89,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     let hibariBLUE = UIColor(red: 12/255, green: 98/255, blue: 145/255, alpha: 1.0)
     let hibariBLACK = UIColor(red: 0/255, green: 0/255, blue: 4/255, alpha: 1.0)
     let hibariBack = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-
+    
     let hibariarray = ["アンタまだ終わってないの!?","終わらないなんて言ってる暇あったら、手を動かしなさい！","やってれば終わらない作業なんてないのよ。","やったら休む！休んだらやる！いいわね？","アンタ、体壊したら意味ないでしょう。休憩しなさい！","早く終わらして、周りの皆を驚かしてやりなさい！","アンタやりゃできるんだから。やってないだけね。","徹夜？徹夜しないでもできるスケジュールにしなさいよ。お肌の敵よ","疲れた？ストレッチでもしなさい。根詰めすぎると進むもんも進まなくなるわよ","はーああ、アンタって子はもう……"]
     
     
@@ -169,7 +169,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     let noaLIME = UIColor(red: 49/255, green: 216/255, blue: 67/255, alpha: 1.0)
     let noaBLACK = UIColor(red: 22/255, green: 48/255, blue: 43/255, alpha: 1.0)
     let noaBack = UIColor(red: 180/255, green: 196/255, blue: 183/255, alpha: 1.0)
-
+    
     let noaarray = ["作業は期日内に終わるものだと聞いています","作業というものはこんなに進まないものなんですね","今は何%終わっているんですか?","頑張りすぎは良くないと聞いています","適度な休憩を挟んでください","期日内に終わる可能性は...。言わないでおきますね","ご主人の体のメンテナンスは大丈夫なんですか?","大丈夫です、きっと終わりますよ。ソースはないんですけど...","何かお手伝いできることはありますか?","ノアもお手伝いします"]
     //"効率良く終わらせていきましょう"
     
@@ -205,22 +205,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-      //  return Twitter.sharedInstance().application(app, open: url, options: options)
-        
-        if Twitter.sharedInstance().application(app, open: url, options: options) {
-            return true
-        }
-        // Your other open URL handlers follow […]
+        //        return Twitter.sharedInstance().application(app, open: url, options: options)
+        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
     }
     
-        
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         
-      
-        Twitter.sharedInstance().start(withConsumerKey: "NbHDnW641mkHFMC3CEWiBo0v5", consumerSecret: "  fMidgUOsNZ1f1WgGKw7GvCQtB1L27kCotPGiXYst7r0HGBcNKl")
-        return true
+        //        Twitter.sharedInstance().start(withConsumerKey:"hTpkPVU4pThkM0", consumerSecret:"ovEqziMzLpUOF163Qg2mj")
+        TWTRTwitter.sharedInstance().start(withConsumerKey:"NbHDnW641mkHFMC3CEWiBo0v5", consumerSecret:"fMidgUOsNZ1f1WgGKw7GvCQtB1L27kCotPGiXYst7r0HGBcNKl")
         
-                UNUserNotificationCenter.current().delegate = self
+        
+        
+        
+        
+        UNUserNotificationCenter.current().delegate = self
         
         
         
@@ -231,7 +233,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                 colorData.set(0, forKey: "Num")}
         }
         
-  //      Twitter.sharedInstance().start(withConsumerKey:"NbHDnW641mkHFMC3CEWiBo0v5", consumerSecret:"fMidgUOsNZ1f1WgGKw7GvCQtB1L27kCotPGiXYst7r0HGBcNKl")
+        //      Twitter.sharedInstance().start(withConsumerKey:"NbHDnW641mkHFMC3CEWiBo0v5", consumerSecret:"fMidgUOsNZ1f1WgGKw7GvCQtB1L27kCotPGiXYst7r0HGBcNKl")
         
         
         if let notification = launchOptions?[UIApplicationLaunchOptionsKey.localNotification] as? UILocalNotification,let userInfo = notification.userInfo{
@@ -281,7 +283,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         print("hoge")
     }
     
-
+    
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -301,8 +303,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         
         UIApplication.shared.applicationIconBadgeNumber += 1
         
-  //      let application = UIApplication()
-   //     application.applicationIconBadgeNumber += 1
+        //      let application = UIApplication()
+        //     application.applicationIconBadgeNumber += 1
         
         //        //Alertダイアログでテスト表示
         //        let contentBody = response.notification.request.content.body
@@ -326,7 +328,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         }
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
- 
+        
     }
     
     
@@ -522,7 +524,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
-      
+        
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
         
