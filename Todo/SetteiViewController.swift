@@ -33,6 +33,10 @@ class SetteiViewCountroller: UIViewController {
             TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
                 if (session != nil) {
                     print("signed in as \(session?.userName)");
+                   //UserDefaults.standard.set(session?.screenName, forKey: "NAME")
+                    var users: [String] = []
+                    users.append((session?.userName)!)
+                    self.fetchUsers(withUserIDs: users)
                 } else {
                     print("error: \(error?.localizedDescription)");
                 }
@@ -42,9 +46,7 @@ class SetteiViewCountroller: UIViewController {
             print("つぶやくのにゃ")
             if let NAME = charaNum.object(forKey: "NAME") as? String, let _ = charaNum.object(forKey: "Num") {
                 var text:String=""
-                
-                
-                
+            
                 if charaNum.object(forKey: "Num") as! Int == 0 {
                     text = "\(NAME)さんの進捗は私が監視させていただいています！...一緒に頑張るわよ。　【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
                 }else if charaNum.object(forKey: "Num") as! Int == 1{
@@ -105,6 +107,21 @@ class SetteiViewCountroller: UIViewController {
         
     }
     
+    func fetchUsers(withUserIDs userIDs: [String]) {
+        let client = TWTRAPIClient()
+        let userIDsString = userIDs.joined(separator: ",")
+        let params = ["user_id": userIDsString]
+        var clientError: NSError?
+        
+        let url = "https://api.twitter.com/1.1/users/lookup.json"
+        let request = client.urlRequest(withMethod: "GET", urlString: url, parameters: params, error: &clientError)
+        client.sendTwitterRequest(request) { (response, data, connectionError) in
+            // エラーハンドリングとParse処理
+            print("sabasaba")
+            print(data)
+            print("sabasaba")
+        }
+    }
     
     @IBAction func web() {
         let url = URL(string: "http://shinchokudoudesuka.jimdo.com")
