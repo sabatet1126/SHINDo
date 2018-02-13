@@ -27,16 +27,28 @@ class SetteiViewCountroller: UIViewController {
     
     var TWEETtext = ["ーーさんの進捗は私が監視させていただいています！...一緒に頑張るわよ。　appstoreURL","ーーの作業進捗、あたしが監視してるよ。さっさと仕上げよ。　appstoreURL","ーーさんは作業を頑張ってますよ...ね？そうよね？　appstoreURL","ーー、作業、頑張ってるから、応援したげてね...! appstoreURL","ーーちゃん、作業頑張ってまーす！いぇーい！　appstoreURL","ーーちゃんちゃんと作業進ませてるよ〜、ほんとだよ〜！...たぶん...? appstore","んもぅーーちゃん作業やってる？サボってたら容赦無く咎めなさいよ。やっちゃいなさい。　appstoreURL","ーーくんの作業は僕が監視しています。サボるようなら許しませんよ！　appstoreURL","ーーは絶賛作業中だ。みんなも監視よろしく頼んだぞ。　appstore","えええっと！ーーさんのし、進捗は僕が管理させていただきます！お、終わらせましょう！　appstore","ーーは作業頑張ってるみたいだけど...まあ、終わらせられるはずだよね〜？　appstore","...ーーさんは、作業中です。...みなさんも応援宜しくお願いします...。　appstoreURL","あー、ーーは作業中だから、みんなもサボってたら適度に急かしてやれよー。よろしくー。　appstore","みなさん！ーー様は作業を頑張っておられます！どうか応援のほどよろしくお願いいたします！ appstoreURL"]
     
+    @IBAction func logout() {
+        
+    print("ろっぐあうつ")
+        if let session = TWTRTwitter.sharedInstance().sessionStore.session() {
+            TWTRTwitter.sharedInstance().sessionStore.logOutUserID(session.userID)
+        }
+        twitterButton.isHidden = true
+        twitterButton.alpha = 0
+    }
     @IBAction func twitterAction(){
         if !TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
             print("ろぐいんなのにゃ")
             TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
                 if (session != nil) {
                     print("signed in as \(session?.userName)");
-                   //UserDefaults.standard.set(session?.screenName, forKey: "NAME")
+                   UserDefaults.standard.set(session?.userName, forKey: "NAME")
+                    //screenName
                     var users: [String] = []
                     users.append((session?.userName)!)
                     self.fetchUsers(withUserIDs: users)
+                    self.twitterButton.alpha = 1
+                    self.twitterButton.isHidden = false
                 } else {
                     print("error: \(error?.localizedDescription)");
                 }
@@ -44,6 +56,9 @@ class SetteiViewCountroller: UIViewController {
     
         }else{
             print("つぶやくのにゃ")
+           
+            print("\(charaNum.object(forKey: "NAME"))ねぃむ")
+            print("\(charaNum.object(forKey: "Num"))なむ")
             if let NAME = charaNum.object(forKey: "NAME") as? String, let _ = charaNum.object(forKey: "Num") {
                 var text:String=""
             
@@ -86,6 +101,8 @@ class SetteiViewCountroller: UIViewController {
                 }else if charaNum.object(forKey: "Num") as! Int == 18{
                     text = "おい、今\(NAME)は作業中なんだ！いい具合にほっといてやれよな！ 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
                 }
+                
+                
             let composer = TWTRComposer()
             composer.setText("\(text)")
             composer.show(from: self, completion: nil)
@@ -134,10 +151,26 @@ class SetteiViewCountroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let myLongPressGesture = UILongPressGestureRecognizer(target: self, action: "logout")
+        myLongPressGesture.minimumPressDuration = 0.2
+        self.twitterButton.addGestureRecognizer(myLongPressGesture)
+        
         
     }
         
     override func viewWillAppear(_ animated: Bool) {
+        print("hoge")
+        print(TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers())
+        if TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
+            twitterButton.alpha = 1
+            twitterButton.isHidden = false
+            
+        }else{
+            
+            twitterButton.isHidden = true
+            twitterButton.alpha = 0
+
+        }
         
         self.view.backgroundColor = appDelegate.fColor
         
@@ -157,18 +190,20 @@ class SetteiViewCountroller: UIViewController {
         
         twitterButton.layer.cornerRadius = 0.096*(UIScreen.main.bounds.size.width)
         twitterButton.layer.masksToBounds = true
-        twitterLabel.layer.cornerRadius = 0.096*(UIScreen.main.bounds.size.width)
-        twitterLabel.layer.masksToBounds = true
-        twitterButtonColor()
-    }
+        twitterButton.backgroundColor = appDelegate.bColor
+ //     twitterButtonColor()
+        
+        
+//        func twitterButtonColor() {
+//            if TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
+//                twitterButton.alpha = 0.5
+//            }else{
+//                twitterButton.alpha = 1
+//            }
+//        }
+//    }
+
         // Do any additional setup after loading the view.
-    func twitterButtonColor() {
-        if TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() {
-            twitterButton.alpha = 0.5
-        }else{
-            twitterButton.alpha = 1
-        }
-    }
     
     
     
@@ -182,4 +217,5 @@ class SetteiViewCountroller: UIViewController {
      }
      */
     
+}
 }

@@ -430,9 +430,31 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
             self.todolistTable.reloadData()
         }
         SakuzyoButton.backgroundColor = appDelegate.cColor
-        
         return [OKButton,SakuzyoButton]
+        
+        let EditButton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "編集") { (action, index) -> Void in
+            let storyboard: UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "add") as! AddToDo
+            self.present(nextView, animated: true, completion: nil)
+            
+            // TextFieldの中身をクリア
+            //self.textField.text = "\(todoItem(at: indexPath.row))"
+            //
+            //            todoItem.remove(at: indexPath.row)
+//            DateItem.remove(at: indexPath.row)
+//            UserDefaults.standard.set(todoItem, forKey: "todoList")
+            // user~でtodoListで取得した配列のindex~番目！！！！！！
+//            UserDefaults.standard.set(DateItem, forKey: "Date")
+            //            tableView.isEditing = false
+            AddToDo.number = indexPath.row
+            
+            print("編集")
+            
+            self.todolistTable.reloadData()
+        }
+        EditButton.backgroundColor = appDelegate.eColor
     }
+    
     
     
     override func viewDidAppear(_ animated: Bool) {

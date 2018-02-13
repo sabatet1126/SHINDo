@@ -17,6 +17,7 @@ var DateItem = [String]()
 class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var colorData : UserDefaults = UserDefaults.standard
+    static var number = 0
     
     @IBOutlet var add: UIButton!
     
@@ -28,6 +29,8 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         super.viewDidLoad()
         
         BACK.backgroundColor = UIColor.white
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

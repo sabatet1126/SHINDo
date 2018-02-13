@@ -39,7 +39,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view" id="BYZ-38-t0r" customClass="ViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -326,27 +326,19 @@
                                     <action selector="web" destination="BeR-Wi-1Xh" eventType="touchUpInside" id="2Bi-ul-r2k"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24B-to-Wfv" userLabel="Twitter Label">
-                                <rect key="frame" x="150" y="523" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.34157542322113027" green="0.44770607729209377" blue="0.53807075777202074" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="24B-to-Wfv" secondAttribute="height" multiplier="64:64" id="CSV-X5-aIp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEm-B2-nCb" userLabel="Twitter Button">
                                 <rect key="frame" x="150" y="523" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.47523716170000002" green="0.68225179899999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.68225179899999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iEm-B2-nCb" secondAttribute="height" multiplier="64:64" id="nJG-yl-ey2"/>
                                 </constraints>
-                                <state key="normal" image="Twitter_Logo_White_On_Blue.png">
-                                    <color key="titleColor" red="1" green="0.99703430729999998" blue="0.99145291280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="LOGOUT">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="twitterAction" destination="BeR-Wi-1Xh" eventType="touchUpInside" id="CUh-6l-33P"/>
+                                    <action selector="logout" destination="BeR-Wi-1Xh" eventType="touchUpInside" id="Hr8-Cf-3hg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Db-7M-ygG">
@@ -373,6 +365,9 @@
                                 <state key="normal" title="TWEET">
                                     <color key="titleColor" red="1" green="0.99703430734498366" blue="0.99145291281957348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="twitterAction" destination="BeR-Wi-1Xh" eventType="touchUpInside" id="SKo-sj-cem"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -390,11 +385,8 @@
                             <constraint firstItem="XwK-8m-pYt" firstAttribute="top" secondItem="iEm-B2-nCb" secondAttribute="bottom" constant="20" id="OIZ-Mm-WxZ"/>
                             <constraint firstItem="Tgg-ZP-eL7" firstAttribute="leading" secondItem="6oR-uN-kbo" secondAttribute="leading" id="PsE-8n-opw"/>
                             <constraint firstItem="5Db-7M-ygG" firstAttribute="top" secondItem="6oR-uN-kbo" secondAttribute="top" id="efg-hj-gWf"/>
-                            <constraint firstItem="24B-to-Wfv" firstAttribute="width" secondItem="5vj-35-3IY" secondAttribute="width" multiplier="0.2" id="guh-FK-gC6"/>
                             <constraint firstItem="6oR-uN-kbo" firstAttribute="top" secondItem="cHO-kd-tqO" secondAttribute="bottom" constant="50" id="hVP-dz-72e"/>
-                            <constraint firstItem="iEm-B2-nCb" firstAttribute="centerY" secondItem="24B-to-Wfv" secondAttribute="centerY" id="oSX-aA-aYV"/>
                             <constraint firstItem="ptr-ZE-bDg" firstAttribute="trailing" secondItem="5Db-7M-ygG" secondAttribute="trailing" id="rYM-uk-1hU"/>
-                            <constraint firstItem="iEm-B2-nCb" firstAttribute="centerX" secondItem="24B-to-Wfv" secondAttribute="centerX" id="yIJ-0u-wWj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ptr-ZE-bDg" secondAttribute="trailing" constant="28" id="zGg-eZ-4cz"/>
                             <constraint firstItem="Tgg-ZP-eL7" firstAttribute="centerX" secondItem="6oR-uN-kbo" secondAttribute="centerX" id="zpa-WR-4Zp"/>
                         </constraints>
@@ -405,7 +397,6 @@
                         <outlet property="colorButton" destination="6oR-uN-kbo" id="TlD-Hu-Pep"/>
                         <outlet property="tweetButton" destination="ptr-ZE-bDg" id="F57-JG-1sM"/>
                         <outlet property="twitterButton" destination="iEm-B2-nCb" id="FKe-8m-mY6"/>
-                        <outlet property="twitterLabel" destination="24B-to-Wfv" id="2pw-mH-ecz"/>
                         <outlet property="webButton" destination="Tgg-ZP-eL7" id="8BP-m5-Gn8"/>
                     </connections>
                 </viewController>
@@ -416,7 +407,7 @@
         <!--追加-->
         <scene sceneID="Ehv-ec-WTz">
             <objects>
-                <viewController id="WOL-oG-yEa" customClass="AddToDo" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="add" id="WOL-oG-yEa" customClass="AddToDo" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F2E-qa-YKs"/>
                         <viewControllerLayoutGuide type="bottom" id="aab-JG-jnu"/>
@@ -1273,7 +1264,6 @@
     </scenes>
     <resources>
         <image name="0つばき.png" width="984" height="1485"/>
-        <image name="Twitter_Logo_White_On_Blue.png" width="400" height="400"/>
         <image name="akutsu.png" width="700" height="200"/>
         <image name="amenomiya.png" width="700" height="200"/>
         <image name="c_akutsu.png" width="700" height="200"/>
