@@ -49,10 +49,21 @@ class SetteiViewCountroller: UIViewController {
                     self.fetchUsers(withUserIDs: users)
                     self.twitterButton.alpha = 1
                     self.twitterButton.isHidden = false
+                    
+                    let client = TWTRAPIClient()
+                    client.loadUser(withID: (session?.userID)!, completion: { (user, error) -> Void in
+                        DispatchQueue.main.async() {
+                            print("UseName: \(session?.userName)")
+                            print("Name: \(String(describing: user?.profileURL))")
+                            print("Image Url: \(user?.profileImageURL ?? "nil")")
+                            print(user?.screenName)
+                            
+                    }
+                    })
                 } else {
                     print("error: \(error?.localizedDescription)");
                 }
-            })
+                })
     
         }else{
             print("つぶやくのにゃ")

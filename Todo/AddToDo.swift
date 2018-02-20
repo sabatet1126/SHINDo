@@ -16,8 +16,10 @@ var DateItem = [String]()
 
 class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    
     var colorData : UserDefaults = UserDefaults.standard
-    static var number = 0
+    var number = -1
     
     @IBOutlet var add: UIButton!
     
@@ -29,8 +31,29 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         super.viewDidLoad()
         
         BACK.backgroundColor = UIColor.white
+        print(number)
+        
+        if number >= 0{
+            
+            if UserDefaults.standard.object(forKey: "todoList") != nil {
+                todoItem = UserDefaults.standard.object(forKey: "todoList") as! [String]
+            }
+            
+            itemText.text = "\(todoItem[number])"
+            //TodoItem
+            //Datepicker
+        }else{
+            
+            itemText.text = " "
+        }
         
         
+        //        todoItem.remove(at: AddToDo.number)
+        //        DateItem.remove(at: AddToDo.number)
+        //        UserDefaults.standard.set(todoItem, forKey: "todoList")
+        //        UserDefaults.standard.set(DateItem, forKey: "Date")
+        //        AddToDo.number = AddToDo.number
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +72,8 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
     
     //キーボード打つ
     @IBOutlet weak var itemText: UITextField!
+    
+    
     
     
     var datetext: String = ""
@@ -134,6 +159,13 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         }
         
         //アラート
+        if number >= 0{
+            self.dismiss(animated: true)
+            //ずっと数字が2
+            print(number)
+            todoItem.remove(at: number)
+        }else{
+            print(number)
         let alertController = UIAlertController(title: "目標設定", message: "締め切りまでに終わらせてください", preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -141,6 +173,7 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         
         present(alertController, animated: true, completion: nil)
         
+        }
         
         
     }

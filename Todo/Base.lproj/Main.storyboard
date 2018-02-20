@@ -162,7 +162,7 @@
                     <navigationItem key="navigationItem" id="sbi-nS-1ef">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="chR-12-5LQ">
                             <connections>
-                                <segue destination="WOL-oG-yEa" kind="push" id="SV2-kZ-Al4"/>
+                                <action selector="ToAddViewC" destination="BYZ-38-t0r" id="YLr-oX-pPC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -173,11 +173,12 @@
                         <outlet property="illust2" destination="rlv-Wr-TH7" id="uPc-oh-9Rs"/>
                         <outlet property="serifu" destination="AmS-ub-3JS" id="9Ic-ZC-xWo"/>
                         <outlet property="todolistTable" destination="X4b-2E-a4V" id="rLD-LJ-rCc"/>
+                        <segue destination="WOL-oG-yEa" kind="push" identifier="ToAddViewC" id="ERn-KR-Qsz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.5" y="1163.5"/>
+            <point key="canvasLocation" x="854" y="1099"/>
         </scene>
         <!--担当-->
         <scene sceneID="jNV-9d-6Zd">

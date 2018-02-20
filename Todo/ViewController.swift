@@ -19,6 +19,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
     var colorData : UserDefaults = UserDefaults.standard
     var defaults: UserDefaults = UserDefaults.standard
     var audioPlayer: AVAudioPlayer!
+    var number = 0
+   
     
     @IBOutlet var serifu: UILabel!
     @IBOutlet weak var illust2: UIImageView!
@@ -262,7 +264,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
     }
     
     
-        
+    @IBAction func ToAddViewC(){
+        self.performSegue(withIdentifier: "ToAddViewC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToAddViewC" {
+            let addToDo = segue.destination as! AddToDo
+            addToDo.number = self.number
+        }
+    }
     
     
     @IBAction func fukidashi() {
@@ -430,29 +441,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
             self.todolistTable.reloadData()
         }
         SakuzyoButton.backgroundColor = appDelegate.cColor
-        return [OKButton,SakuzyoButton]
+        
         
         let EditButton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "編集") { (action, index) -> Void in
-            let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "add") as! AddToDo
-            self.present(nextView, animated: true, completion: nil)
-            
-            // TextFieldの中身をクリア
-            //self.textField.text = "\(todoItem(at: indexPath.row))"
-            //
-            //            todoItem.remove(at: indexPath.row)
-//            DateItem.remove(at: indexPath.row)
-//            UserDefaults.standard.set(todoItem, forKey: "todoList")
-            // user~でtodoListで取得した配列のindex~番目！！！！！！
-//            UserDefaults.standard.set(DateItem, forKey: "Date")
-            //            tableView.isEditing = false
-            AddToDo.number = indexPath.row
-            
+           
+            self.number = indexPath.row
+            self.performSegue(withIdentifier: "ToAddViewC", sender: nil)
+          
             print("編集")
             
-            self.todolistTable.reloadData()
+            
+         //   self.dismiss(animated: true)
         }
         EditButton.backgroundColor = appDelegate.eColor
+        return [OKButton,SakuzyoButton,EditButton]
     }
     
     
