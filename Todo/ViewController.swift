@@ -265,13 +265,17 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
     
     
     @IBAction func ToAddViewC(){
+        number = -1
         self.performSegue(withIdentifier: "ToAddViewC", sender: nil)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToAddViewC" {
             let addToDo = segue.destination as! AddToDo
             addToDo.number = self.number
+           
+        
         }
     }
     
@@ -450,7 +454,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
           
             print("編集")
             
-            
+            //編集以外は空欄無理！
          //   self.dismiss(animated: true)
         }
         EditButton.backgroundColor = appDelegate.eColor

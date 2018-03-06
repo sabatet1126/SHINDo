@@ -34,17 +34,25 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         print(number)
         
         if number >= 0{
-            
+            print("モハメドアブドゥル")
+            print("\(todoItem[number])")
             if UserDefaults.standard.object(forKey: "todoList") != nil {
                 todoItem = UserDefaults.standard.object(forKey: "todoList") as! [String]
+                DateItem = UserDefaults.standard.object(forKey: "Date") as! [String]
+                print("hoge")
+                print(todoItem)
+                print(DateItem)
+                
             }
             
             itemText.text = "\(todoItem[number])"
+            
+            
             //TodoItem
             //Datepicker
         }else{
-            
-            itemText.text = " "
+            print("モハメドアブドゥル")
+            itemText.text = ""
         }
         
         
@@ -53,7 +61,7 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         //        UserDefaults.standard.set(todoItem, forKey: "todoList")
         //        UserDefaults.standard.set(DateItem, forKey: "Date")
         //        AddToDo.number = AddToDo.number
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,6 +113,7 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
     @IBAction func addItem(_ sender: AnyObject){
         
         
+        print(itemText.text)
         
         guard itemText.text != "" else {
             //アラート
@@ -119,6 +128,10 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         }
         
         
+        if number >= 0 {
+            todoItem.remove(at: number)
+            DateItem.remove(at: number)
+        }
         
         todoItem.append(itemText.text!)
         //itemText.text = ""
@@ -131,6 +144,10 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
         
         itemText.text = ""
         UserDefaults.standard.set(DateItem, forKey: "Date")
+        
+        print(todoItem)
+        print("けんじがきたぞ")
+        print(DateItem)
         
         for i in 0 ..< DateItem.count - 1 {
             for j in ((i + 1)...DateItem.count-1).reversed() {
@@ -153,26 +170,48 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
             
             
             
-                       print(datetext)
-                       
+            print(datetext)
+            
             
         }
         
         //アラート
         if number >= 0{
-            self.dismiss(animated: true)
+            
             //ずっと数字が2
             print(number)
+            print("hoge")
+            
             todoItem.remove(at: number)
+            DateItem.remove(at: number)
+            
+            //            let alertController = UIAlertController(title: "変更", message: "締め切りを変更しました", preferredStyle: UIAlertControllerStyle.alert)
+            //
+            //            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{(action: UIAlertAction!) in
+            //                self.dismiss(animated: true, completion: nil)
+            //
+            //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
+            //      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            // 0.5秒後に実行したい処理
+            navigationController?.popToRootViewController(animated: true)
+            //         }
+            //    }
+            //       )
+            
+            //            alertController.addAction(okAction)
+            
+            //アラートを表示する
+            //          present(alertController, animated: true, completion: nil)
+            
         }else{
             print(number)
-        let alertController = UIAlertController(title: "目標設定", message: "締め切りまでに終わらせてください", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        present(alertController, animated: true, completion: nil)
-        
+            let alertController = UIAlertController(title: "目標設定", message: "締め切りまでに終わらせてください", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+            
         }
         
         
