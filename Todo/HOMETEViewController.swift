@@ -34,7 +34,7 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
     
     var switchBool:Bool = false
     
-    var charaImage = ["0つばき.png","0ウタ.png","0ツツミ.png","0ヴェロニカ.png","0キャンディス.png","0ソニア.png","0ヒバリ.png","0アメノミヤ.png","0ソウジ.png","0コタロー.png","0湊.png","0イッシキ.png","0阿久津.png","0ノッティンガム.png","SDノア.png","SDユリチカ.png","SD怪人.png","SDオリバー.png","SD龍仁.png"]
+    var charaImage = ["0つばき.png","0ウタ.png","0ツツミ.png","0ヴェロニカ.png","0キャンディス.png","0ソニア.png","0ヒバリ.png","0アメノミヤ.png","0ソウジ.png","0コタロー.png","0湊.png","0イッシキ.png","0阿久津.png","0ノッティンガム.png","SDノア.png","SDユリチカ.png","SD怪人.png","SDオリバー.png","SD龍仁.png","0ユズハ.png"]
     
     var timer: Timer!
     
@@ -209,6 +209,8 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
             musicArr = musicDate.oliverVoice[4]
         }else if charaNum.object(forKey: "Num")as! Int == 18{
             musicArr = musicDate.ryujiVoice[4]
+        }else if charaNum.object(forKey: "Num")as! Int == 19{
+            musicArr = musicDate.yuzuhaVoice[4]
         }
         
         
@@ -331,6 +333,8 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
             musicArr = musicDate.oliverVoice[1]
         }else if charaNum.object(forKey: "Num")as! Int == 18{
             musicArr = musicDate.ryujiVoice[1]
+        }else if charaNum.object(forKey: "Num")as! Int == 19{
+            musicArr = musicDate.yuzuhaVoice[1]
         }
         
         
@@ -448,6 +452,8 @@ class HOMETEViewController: UIViewController , AVAudioPlayerDelegate {
             musicArr = musicDate.oliverVoice[2]
         }else if charaNum.object(forKey: "Num")as! Int == 18{
             musicArr = musicDate.ryujiVoice[2]
+        }else if charaNum.object(forKey: "Num")as! Int == 19{
+            musicArr = musicDate.yuzuhaVoice[2]
         }
         
         print(musicArr)

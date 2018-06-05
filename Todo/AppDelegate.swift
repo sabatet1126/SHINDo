@@ -200,6 +200,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     
     let ryujiarray = ["さっさと終わらしちまおうぜ!","仕事しすぎは毒だ、ってばーちゃんが言ってたぜ","へーきか?疲れてないか?","なんとかなるかじゃねえ、するんだよ","締め切りまでにはなんとかしようぜ...!!","ばーちゃんが、スケジュールは余裕もって決めな、って。","まず何から手をつけるべきなんだ...?","締切だけは!絶対破らないようにしような...!!","早め早めに終わらせて行けよ","終わったら一緒に煎餅でも食おうぜ~"]
     
+    let yuzuhaWHITE = UIColor(red: 246/255, green: 239/255, blue: 166/255, alpha: 1.0)
+    let yuzuhaPINK = UIColor(red: 240/255, green: 210/255, blue: 209/255, alpha: 1.0)
+    let yuzuhaYELLOW = UIColor(red: 246/255, green: 239/255, blue: 166/255, alpha: 1.0)
+    let yuzuhaRED = UIColor(red: 255/255, green: 126/255, blue: 107/255, alpha: 1.0)
+    let yuzuhaBROWN = UIColor(red: 140/255, green: 94/255, blue: 88/255, alpha: 1.0)
+    let yuzuhaBack = UIColor(red: 255/255, green: 166/255, blue: 158/255, alpha: 1.0)
+    
+    let yuzuhaarray = ["・こ、困ったなあ…","うんうん、いい感じじゃん！","疲れたら、一呼吸置くのもいいんじゃない？","早めに終わらせよ！","たまには休みなさいよ！","もうちょっとがんばろ！","進捗大丈夫！？","タスク貯めるのよくないよ…？","いつ終わらせるつもりなの？","ちゃんと間に合わせてよ？"]
+    
     // ③ ナビゲーションバー上のアイテムの色
     
     
@@ -413,6 +422,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         }else if charaNum.object(forKey: "Num")as! Int == 18{
             tuchion = musicDate.ryujiVoice[3]
             tsuuchi = "進捗大丈夫か？"
+        }else if charaNum.object(forKey: "Num")as! Int == 19{
+            tuchion = musicDate.yuzuhaVoice[3]
+            tsuuchi = "進捗、大丈夫？"
         }
         
         

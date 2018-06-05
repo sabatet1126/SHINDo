@@ -574,7 +574,29 @@ class SetteiCharaViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
     }
-    
+    @IBAction func yuzuha() {
+        charaNum.set(19, forKey: "Num")
+        charaNum.set(19, forKey: "samune")
+        
+        let alertController = UIAlertController(title: "進捗管理人登録", message: "進捗管理人を【ユズハ】に変更しました", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+        
+        appDelegate.textArray = appDelegate.ryujiarray
+        userDefault.set(appDelegate.textArray,forKey: "serifu")
+        userDefault.synchronize()
+        
+        let audioPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "S_00", ofType: "mp3")!)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: audioPath as URL)
+            audioPlayer.delegate = self
+            audioPlayer.play()
+        }
+        catch {
+            print("AVAudioPlayer error")
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         
        

@@ -111,18 +111,28 @@ class SetteiViewCountroller: UIViewController {
                     text = "\(NAME)さん、今は絶賛作業中です！応援宜しくお願いしますね！【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
                 }else if charaNum.object(forKey: "Num") as! Int == 18{
                     text = "おい、今\(NAME)は作業中なんだ！いい具合にほっといてやれよな！ 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
+                }else if charaNum.object(forKey: "Num") as! Int == 19{
+                    text = "今\(NAME)さんは作業中です！もうちょっとで終わる…かな？ 【あなたと頑張るリマインダー、SHINDo】https://itunes.apple.com/jp/app/shindo/id1287023305?mt=8"
                 }
                 
                 
-            let composer = TWTRComposer()
-            composer.setText("\(text)")
-            composer.show(from: self, completion: nil)
-            
-   /*         let composeViewController: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
-            composeViewController.setInitialText(text)
-            
-            self.present(composeViewController, animated: true, completion: nil)
-   */
+                //変更前
+                //let composer = TWTRComposer()
+                //composer.setText("\(text)")
+                //composer.show(from: self, completion: nil)
+                
+                //変更後
+                let viewController = TWTRComposerViewController(initialText: text, image: nil, videoData: nil)
+                present(viewController, animated: true) {
+                    if let textView = viewController.view!.subviews.first!.subviews.first!.subviews.first!.subviews.first!.subviews.first!.subviews.first!.subviews[1].subviews[1] as? UITextView,
+                        let scrollView = viewController.view!.subviews.first!.subviews.first!.subviews.first!.subviews.first!.subviews.first! as? UIScrollView {
+                        viewController.view.clipsToBounds = false
+                        textView.font = UIFont.systemFont(ofSize: 17)
+                        textView.sizeToFit()
+                        scrollView.contentSize = textView.frame.size
+                        scrollView.setNeedsUpdateConstraints()
+                    }
+                }
         
         }
         
@@ -162,10 +172,18 @@ class SetteiViewCountroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let myLongPressGesture = UILongPressGestureRecognizer(target: self, action: "logout")
         myLongPressGesture.minimumPressDuration = 0.2
         self.twitterButton.addGestureRecognizer(myLongPressGesture)
         
+        //新規追加。以前のバージョンでTwitterログインしていない場合は、一回ログアウト
+        if let NAME = charaNum.object(forKey: "NAME") as? String{
+            twitterButton.isHidden = false
+        }else{
+            twitterButton.isHidden = true
+            logout()
+        }
         
     }
         

@@ -270,6 +270,29 @@
 		853590A91F4DD06B002F64B2 /* ISK-20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853590951F4DD06B002F64B2 /* ISK-20.mp3 */; };
 		85373E2E1F35A4BF003D1C96 /* twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85373E2D1F35A4BF003D1C96 /* twitter.swift */; };
 		85373E301F35B58C003D1C96 /* Twitter_Logo_White_On_Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 85373E2F1F35B58C003D1C96 /* Twitter_Logo_White_On_Blue.png */; };
+		853893AC20C68A6800BD1C1C /* S_00.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538939820C68A6700BD1C1C /* S_00.mp3 */; };
+		853893AD20C68A6800BD1C1C /* S_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538939920C68A6700BD1C1C /* S_01.mp3 */; };
+		853893AE20C68A6800BD1C1C /* S_02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538939A20C68A6700BD1C1C /* S_02.mp3 */; };
+		853893AF20C68A6800BD1C1C /* S_03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538939B20C68A6700BD1C1C /* S_03.mp3 */; };
+		853893B020C68A6800BD1C1C /* S_04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538939C20C68A6700BD1C1C /* S_04.mp3 */; };
+		853893B120C68A6800BD1C1C /* S_05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538939D20C68A6700BD1C1C /* S_05.mp3 */; };
+		853893B220C68A6800BD1C1C /* S_06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538939E20C68A6700BD1C1C /* S_06.mp3 */; };
+		853893B320C68A6800BD1C1C /* S_07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538939F20C68A6700BD1C1C /* S_07.mp3 */; };
+		853893B420C68A6800BD1C1C /* S_08.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A020C68A6700BD1C1C /* S_08.mp3 */; };
+		853893B520C68A6800BD1C1C /* S_09.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A120C68A6700BD1C1C /* S_09.mp3 */; };
+		853893B620C68A6800BD1C1C /* S_10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A220C68A6700BD1C1C /* S_10.mp3 */; };
+		853893B720C68A6800BD1C1C /* S_11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A320C68A6700BD1C1C /* S_11.mp3 */; };
+		853893B820C68A6800BD1C1C /* S_12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A420C68A6700BD1C1C /* S_12.mp3 */; };
+		853893B920C68A6800BD1C1C /* S_13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A520C68A6700BD1C1C /* S_13.mp3 */; };
+		853893BA20C68A6800BD1C1C /* S_14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A620C68A6700BD1C1C /* S_14.mp3 */; };
+		853893BB20C68A6800BD1C1C /* S_15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A720C68A6700BD1C1C /* S_15.mp3 */; };
+		853893BC20C68A6800BD1C1C /* S_16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A820C68A6700BD1C1C /* S_16.mp3 */; };
+		853893BD20C68A6800BD1C1C /* S_17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893A920C68A6700BD1C1C /* S_17.mp3 */; };
+		853893BE20C68A6800BD1C1C /* S_18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893AA20C68A6700BD1C1C /* S_18.mp3 */; };
+		853893BF20C68A6800BD1C1C /* S_19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 853893AB20C68A6700BD1C1C /* S_19.mp3 */; };
+		853893C120C68A8000BD1C1C /* c_yuzuha.png in Resources */ = {isa = PBXBuildFile; fileRef = 853893C020C68A8000BD1C1C /* c_yuzuha.png */; };
+		853893C320C68AA100BD1C1C /* 0ユズハ.png in Resources */ = {isa = PBXBuildFile; fileRef = 853893C220C68AA000BD1C1C /* 0ユズハ.png */; };
+		853893C520C68B1F00BD1C1C /* yuzuha.png in Resources */ = {isa = PBXBuildFile; fileRef = 853893C420C68B1E00BD1C1C /* yuzuha.png */; };
 		854310DC1F14CF9E00681D68 /* u01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 854310C81F14CF9E00681D68 /* u01.mp3 */; };
 		854310DD1F14CF9E00681D68 /* u02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 854310C91F14CF9E00681D68 /* u02.mp3 */; };
 		854310DE1F14CF9E00681D68 /* u03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 854310CA1F14CF9E00681D68 /* u03.mp3 */; };
@@ -374,6 +397,7 @@
 		854602E11F1CF695003A32C2 /* Y9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 854602CD1F1CF695003A32C2 /* Y9.mp3 */; };
 		85548B911F0B940100C009B6 /* ボイス.png in Resources */ = {isa = PBXBuildFile; fileRef = 85548B901F0B940100C009B6 /* ボイス.png */; };
 		85548B931F0B940800C009B6 /* 工具.png in Resources */ = {isa = PBXBuildFile; fileRef = 85548B921F0B940800C009B6 /* 工具.png */; };
+		85561F2F20C6A691000BE7C2 /* サムネユズハ.png in Resources */ = {isa = PBXBuildFile; fileRef = 85561F2E20C6A690000BE7C2 /* サムネユズハ.png */; };
 		855EDEC41EE6AD3000798E1B /* ve04-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 855EDEC31EE6AD3000798E1B /* ve04-2.mp3 */; };
 		855EDEDA1EE6B01B00798E1B /* ak01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 855EDEC61EE6B01B00798E1B /* ak01.mp3 */; };
 		855EDEDB1EE6B01B00798E1B /* ak02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 855EDEC71EE6B01B00798E1B /* ak02.mp3 */; };
@@ -847,6 +871,29 @@
 		853590951F4DD06B002F64B2 /* ISK-20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ISK-20.mp3"; sourceTree = "<group>"; };
 		85373E2D1F35A4BF003D1C96 /* twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = twitter.swift; sourceTree = "<group>"; };
 		85373E2F1F35B58C003D1C96 /* Twitter_Logo_White_On_Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_Logo_White_On_Blue.png; sourceTree = "<group>"; };
+		8538939820C68A6700BD1C1C /* S_00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_00.mp3; sourceTree = "<group>"; };
+		8538939920C68A6700BD1C1C /* S_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_01.mp3; sourceTree = "<group>"; };
+		8538939A20C68A6700BD1C1C /* S_02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_02.mp3; sourceTree = "<group>"; };
+		8538939B20C68A6700BD1C1C /* S_03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_03.mp3; sourceTree = "<group>"; };
+		8538939C20C68A6700BD1C1C /* S_04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_04.mp3; sourceTree = "<group>"; };
+		8538939D20C68A6700BD1C1C /* S_05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_05.mp3; sourceTree = "<group>"; };
+		8538939E20C68A6700BD1C1C /* S_06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_06.mp3; sourceTree = "<group>"; };
+		8538939F20C68A6700BD1C1C /* S_07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_07.mp3; sourceTree = "<group>"; };
+		853893A020C68A6700BD1C1C /* S_08.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_08.mp3; sourceTree = "<group>"; };
+		853893A120C68A6700BD1C1C /* S_09.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_09.mp3; sourceTree = "<group>"; };
+		853893A220C68A6700BD1C1C /* S_10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_10.mp3; sourceTree = "<group>"; };
+		853893A320C68A6700BD1C1C /* S_11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_11.mp3; sourceTree = "<group>"; };
+		853893A420C68A6700BD1C1C /* S_12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_12.mp3; sourceTree = "<group>"; };
+		853893A520C68A6700BD1C1C /* S_13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_13.mp3; sourceTree = "<group>"; };
+		853893A620C68A6700BD1C1C /* S_14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_14.mp3; sourceTree = "<group>"; };
+		853893A720C68A6700BD1C1C /* S_15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_15.mp3; sourceTree = "<group>"; };
+		853893A820C68A6700BD1C1C /* S_16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_16.mp3; sourceTree = "<group>"; };
+		853893A920C68A6700BD1C1C /* S_17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_17.mp3; sourceTree = "<group>"; };
+		853893AA20C68A6700BD1C1C /* S_18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_18.mp3; sourceTree = "<group>"; };
+		853893AB20C68A6700BD1C1C /* S_19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = S_19.mp3; sourceTree = "<group>"; };
+		853893C020C68A8000BD1C1C /* c_yuzuha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c_yuzuha.png; sourceTree = "<group>"; };
+		853893C220C68AA000BD1C1C /* 0ユズハ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0ユズハ.png"; sourceTree = "<group>"; };
+		853893C420C68B1E00BD1C1C /* yuzuha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuzuha.png; sourceTree = "<group>"; };
 		854310C81F14CF9E00681D68 /* u01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = u01.mp3; sourceTree = "<group>"; };
 		854310C91F14CF9E00681D68 /* u02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = u02.mp3; sourceTree = "<group>"; };
 		854310CA1F14CF9E00681D68 /* u03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = u03.mp3; sourceTree = "<group>"; };
@@ -952,6 +999,7 @@
 		854602E21F1D04DD003A32C2 /* UI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UI.ttf; sourceTree = "<group>"; };
 		85548B901F0B940100C009B6 /* ボイス.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ボイス.png"; sourceTree = "<group>"; };
 		85548B921F0B940800C009B6 /* 工具.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "工具.png"; sourceTree = "<group>"; };
+		85561F2E20C6A690000BE7C2 /* サムネユズハ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "サムネユズハ.png"; sourceTree = "<group>"; };
 		855EDEC31EE6AD3000798E1B /* ve04-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ve04-2.mp3"; sourceTree = "<group>"; };
 		855EDEC61EE6B01B00798E1B /* ak01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ak01.mp3; sourceTree = "<group>"; };
 		855EDEC71EE6B01B00798E1B /* ak02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ak02.mp3; sourceTree = "<group>"; };
@@ -1270,6 +1318,7 @@
 		851983181EDD791A00C19BB9 /* VOICE */ = {
 			isa = PBXGroup;
 			children = (
+				8538939720C68A6700BD1C1C /* VOICEユズハ */,
 				8581FCBD1F5ED5DD0086BF1D /* VOICEノッティンガム */,
 				85AD0C561F5C56E8009EF132 /* VOICEアメノミヤ */,
 				85AD0C031F5C5596009EF132 /* VOICEソウジ */,
@@ -1612,6 +1661,33 @@
 			path = "VOICEイッシキ";
 			sourceTree = "<group>";
 		};
+		8538939720C68A6700BD1C1C /* VOICEユズハ */ = {
+			isa = PBXGroup;
+			children = (
+				8538939820C68A6700BD1C1C /* S_00.mp3 */,
+				8538939920C68A6700BD1C1C /* S_01.mp3 */,
+				8538939A20C68A6700BD1C1C /* S_02.mp3 */,
+				8538939B20C68A6700BD1C1C /* S_03.mp3 */,
+				8538939C20C68A6700BD1C1C /* S_04.mp3 */,
+				8538939D20C68A6700BD1C1C /* S_05.mp3 */,
+				8538939E20C68A6700BD1C1C /* S_06.mp3 */,
+				8538939F20C68A6700BD1C1C /* S_07.mp3 */,
+				853893A020C68A6700BD1C1C /* S_08.mp3 */,
+				853893A120C68A6700BD1C1C /* S_09.mp3 */,
+				853893A220C68A6700BD1C1C /* S_10.mp3 */,
+				853893A320C68A6700BD1C1C /* S_11.mp3 */,
+				853893A420C68A6700BD1C1C /* S_12.mp3 */,
+				853893A520C68A6700BD1C1C /* S_13.mp3 */,
+				853893A620C68A6700BD1C1C /* S_14.mp3 */,
+				853893A720C68A6700BD1C1C /* S_15.mp3 */,
+				853893A820C68A6700BD1C1C /* S_16.mp3 */,
+				853893A920C68A6700BD1C1C /* S_17.mp3 */,
+				853893AA20C68A6700BD1C1C /* S_18.mp3 */,
+				853893AB20C68A6700BD1C1C /* S_19.mp3 */,
+			);
+			path = "VOICEユズハ";
+			sourceTree = "<group>";
+		};
 		854310C71F14CF9E00681D68 /* VOICEウタ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1783,6 +1859,7 @@
 		858416EB1EC1D0F400F19599 /* SDサムネイル */ = {
 			isa = PBXGroup;
 			children = (
+				85561F2E20C6A690000BE7C2 /* サムネユズハ.png */,
 				8543110E1F14D07D00681D68 /* サムネオリバー.png */,
 				8543110F1F14D07D00681D68 /* サムネカイト.png */,
 				854311101F14D07D00681D68 /* サムネノア.png */,
@@ -1809,6 +1886,7 @@
 		858417081EC1D0FE00F19599 /* SD立ち絵 */ = {
 			isa = PBXGroup;
 			children = (
+				853893C220C68AA000BD1C1C /* 0ユズハ.png */,
 				854311041F14D00B00681D68 /* SDオリバー.png */,
 				854311051F14D00B00681D68 /* SDノア.png */,
 				854311061F14D00B00681D68 /* SDユリチカ.png */,
@@ -1849,6 +1927,7 @@
 		85A666071ECB00E000D27BC7 /* キャラ選択タブ */ = {
 			isa = PBXGroup;
 			children = (
+				853893C420C68B1E00BD1C1C /* yuzuha.png */,
 				854310F81F14CFE100681D68 /* kaito.png */,
 				854310F91F14CFE100681D68 /* noa.png */,
 				854310FA1F14CFE100681D68 /* oliver.png */,
@@ -1931,6 +2010,7 @@
 		85E91AEA1ECB0DAD00DCC4D4 /* 色タブ */ = {
 			isa = PBXGroup;
 			children = (
+				853893C020C68A8000BD1C1C /* c_yuzuha.png */,
 				854311021F14CFF100681D68 /* c_noa.png */,
 				854310F01F14CFCB00681D68 /* c_kaito.png */,
 				854310F11F14CFCB00681D68 /* c_oliver.png */,
@@ -2168,12 +2248,14 @@
 				8535909A1F4DD06B002F64B2 /* ISK-05.mp3 in Resources */,
 				85A6661A1ECB00E000D27BC7 /* issiki.png in Resources */,
 				85E91B041ECB0DAD00DCC4D4 /* c_tsutsumi.png in Resources */,
+				853893B220C68A6800BD1C1C /* S_06.mp3 in Resources */,
 				85EF42C71F1E020F000A9CA9 /* B7.mp3 in Resources */,
 				851A0F7D1F2867F400E08029 /* k4B.mp3 in Resources */,
 				8581FCDB1F5ED5DD0086BF1D /* ntg-10.mp3 in Resources */,
 				8531D4341F0BAD7800E7E8C4 /* tutumi018.mp3 in Resources */,
 				855EDEE61EE6B01B00798E1B /* ak13.mp3 in Resources */,
 				8535909C1F4DD06B002F64B2 /* ISK-07.mp3 in Resources */,
+				853893AD20C68A6800BD1C1C /* S_01.mp3 in Resources */,
 				854515E61F1F055100DCC555 /* n_15.mp3 in Resources */,
 				851983821EDD795E00C19BB9 /* tb12.mp3 in Resources */,
 				85EF42B01F1E020F000A9CA9 /* 17a.mp3 in Resources */,
@@ -2215,6 +2297,8 @@
 				85F14D7F1F1D0A180063857D /* 03SmartFontUI.ttf in Resources */,
 				853590451F4DCACE002F64B2 /* HBR-02.mp3 in Resources */,
 				851A0F7F1F2867F400E08029 /* k5B.mp3 in Resources */,
+				853893BB20C68A6800BD1C1C /* S_15.mp3 in Resources */,
+				853893B720C68A6800BD1C1C /* S_11.mp3 in Resources */,
 				855EDEE21EE6B01B00798E1B /* ak09.mp3 in Resources */,
 				854602D31F1CF695003A32C2 /* Y14.mp3 in Resources */,
 				855EDEED1EE6B01B00798E1B /* ak20.mp3 in Resources */,
@@ -2238,6 +2322,7 @@
 				853590161F4DC63B002F64B2 /* 2A.mp3 in Resources */,
 				858417191EC1D0FE00F19599 /* 0イッシキ.png in Resources */,
 				853590041F4DC63B002F64B2 /* 16A.mp3 in Resources */,
+				85561F2F20C6A691000BE7C2 /* サムネユズハ.png in Resources */,
 				851A0F831F2867F400E08029 /* k8.mp3 in Resources */,
 				855EDEC41EE6AD3000798E1B /* ve04-2.mp3 in Resources */,
 				855EDEE11EE6B01B00798E1B /* ak08.mp3 in Resources */,
@@ -2264,10 +2349,12 @@
 				8531D4281F0BAD7700E7E8C4 /* tutumi006.mp3 in Resources */,
 				8519835A1EDD795400C19BB9 /* ca12.mp3 in Resources */,
 				8535902E1F4DC63B002F64B2 /* 9D.mp3 in Resources */,
+				853893B920C68A6800BD1C1C /* S_13.mp3 in Resources */,
 				854602D51F1CF695003A32C2 /* Y16.mp3 in Resources */,
 				854515EB1F1F055100DCC555 /* n_20_A.mp3 in Resources */,
 				854310E21F14CF9E00681D68 /* u07.mp3 in Resources */,
 				85E91B021ECB0DAD00DCC4D4 /* c_souji.png in Resources */,
+				853893BF20C68A6800BD1C1C /* S_19.mp3 in Resources */,
 				853590471F4DCACE002F64B2 /* HBR-04.mp3 in Resources */,
 				853590051F4DC63B002F64B2 /* 16B.mp3 in Resources */,
 				853590961F4DD06B002F64B2 /* ISK-01.mp3 in Resources */,
@@ -2286,6 +2373,7 @@
 				855EDEE31EE6B01B00798E1B /* ak10.mp3 in Resources */,
 				8584171D1EC1D0FE00F19599 /* 0コタロー.png in Resources */,
 				853590481F4DCACE002F64B2 /* HBR-05.mp3 in Resources */,
+				853893BD20C68A6800BD1C1C /* S_17.mp3 in Resources */,
 				85EF42B91F1E020F000A9CA9 /* B12.mp3 in Resources */,
 				8535909D1F4DD06B002F64B2 /* ISK-08.mp3 in Resources */,
 				85AD0C451F5C5596009EF132 /* souji20.mp3 in Resources */,
@@ -2312,6 +2400,7 @@
 				851983581EDD795400C19BB9 /* ca10.mp3 in Resources */,
 				85AD0C4B1F5C5596009EF132 /* souji5.mp3 in Resources */,
 				858417031EC1D0F400F19599 /* サムネツバキ.png in Resources */,
+				853893B520C68A6800BD1C1C /* S_09.mp3 in Resources */,
 				854311151F14D07D00681D68 /* サムネノア.png in Resources */,
 				858417211EC1D0FE00F19599 /* 0ノッティンガム.png in Resources */,
 				8535902C1F4DC63B002F64B2 /* 9B.mp3 in Resources */,
@@ -2364,6 +2453,7 @@
 				851983DA1EDD8A6500C19BB9 /* ve13.mp3 in Resources */,
 				854602D21F1CF695003A32C2 /* Y13.mp3 in Resources */,
 				858417051EC1D0F400F19599 /* サムネヒバリ.png in Resources */,
+				853893B320C68A6800BD1C1C /* S_07.mp3 in Resources */,
 				855EDEEA1EE6B01B00798E1B /* ak17.mp3 in Resources */,
 				8535902B1F4DC63B002F64B2 /* 9A.mp3 in Resources */,
 				853590011F4DC63B002F64B2 /* 15A.mp3 in Resources */,
@@ -2429,11 +2519,13 @@
 				854516151F1F071E00DCC555 /* o_19.mp3 in Resources */,
 				85AD0C701F5C56E8009EF132 /* am-06.mp3 in Resources */,
 				85EF42B61F1E020F000A9CA9 /* B1.mp3 in Resources */,
+				853893C120C68A8000BD1C1C /* c_yuzuha.png in Resources */,
 				851983E21EDD8A6500C19BB9 /* ve04-a.mp3 in Resources */,
 				851983621EDD795400C19BB9 /* ca02.mp3 in Resources */,
 				851983901EDD795E00C19BB9 /* tb08.mp3 in Resources */,
 				855EDEDE1EE6B01B00798E1B /* ak05.mp3 in Resources */,
 				8535900E1F4DC63B002F64B2 /* 19A.mp3 in Resources */,
+				853893C520C68B1F00BD1C1C /* yuzuha.png in Resources */,
 				853590151F4DC63B002F64B2 /* 1B.mp3 in Resources */,
 				85E91B031ECB0DAD00DCC4D4 /* c_tsubaki.png in Resources */,
 				858416FC1EC1D0F400F19599 /* サムネヴェロ.png in Resources */,
@@ -2506,6 +2598,7 @@
 				85358FF61F4DC63B002F64B2 /* 10B.mp3 in Resources */,
 				855EDEEC1EE6B01B00798E1B /* ak19.mp3 in Resources */,
 				854516071F1F071D00DCC555 /* o_05.mp3 in Resources */,
+				853893B020C68A6800BD1C1C /* S_04.mp3 in Resources */,
 				8531D4301F0BAD7700E7E8C4 /* tutumi014.mp3 in Resources */,
 				853590061F4DC63B002F64B2 /* 16C.mp3 in Resources */,
 				851983B41EDD796800C19BB9 /* ko13.mp3 in Resources */,
@@ -2540,6 +2633,7 @@
 				854310FF1F14CFE100681D68 /* oliver.png in Resources */,
 				85EF42B31F1E020F000A9CA9 /* 18c.mp3 in Resources */,
 				8535904E1F4DCACE002F64B2 /* HBR-11.mp3 in Resources */,
+				853893AE20C68A6800BD1C1C /* S_02.mp3 in Resources */,
 				85AD0C761F5C56E8009EF132 /* am-12.mp3 in Resources */,
 				851A0F721F2867F400E08029 /* k15B.mp3 in Resources */,
 				8584171B1EC1D0FE00F19599 /* 0ウタ.png in Resources */,
@@ -2564,6 +2658,7 @@
 				853590981F4DD06B002F64B2 /* ISK-03.mp3 in Resources */,
 				851983DD1EDD8A6500C19BB9 /* ve16.mp3 in Resources */,
 				858416FF1EC1D0F400F19599 /* サムネコタロー.png in Resources */,
+				853893B820C68A6800BD1C1C /* S_12.mp3 in Resources */,
 				85EF42C91F1E020F000A9CA9 /* B9.mp3 in Resources */,
 				85AD0C771F5C56E8009EF132 /* am-13.mp3 in Resources */,
 				8581FCDA1F5ED5DD0086BF1D /* ntg-09.mp3 in Resources */,
@@ -2591,13 +2686,17 @@
 				853590801F4DCE0E002F64B2 /* SNA-20.mp3 in Resources */,
 				85F14D801F1D0A180063857D /* 03SmartFont-P.ttf in Resources */,
 				851983BA1EDD796800C19BB9 /* ko19.mp3 in Resources */,
+				853893BA20C68A6800BD1C1C /* S_14.mp3 in Resources */,
 				8543110D1F14D00B00681D68 /* SD龍仁.png in Resources */,
+				853893C320C68AA100BD1C1C /* 0ユズハ.png in Resources */,
 				851983B31EDD796800C19BB9 /* ko12.mp3 in Resources */,
 				854515E91F1F055100DCC555 /* n_18.mp3 in Resources */,
 				851983B11EDD796800C19BB9 /* ko10.mp3 in Resources */,
+				853893B120C68A6800BD1C1C /* S_05.mp3 in Resources */,
 				851983D71EDD8A6500C19BB9 /* ve10.mp3 in Resources */,
 				8531D42A1F0BAD7700E7E8C4 /* tutumi008.mp3 in Resources */,
 				8584171A1EC1D0FE00F19599 /* 0ヴェロニカ.png in Resources */,
+				853893BE20C68A6800BD1C1C /* S_18.mp3 in Resources */,
 				851983D61EDD8A6500C19BB9 /* ve09.mp3 in Resources */,
 				8535904A1F4DCACE002F64B2 /* HBR-07.mp3 in Resources */,
 				854516121F1F071E00DCC555 /* o_16.mp3 in Resources */,
@@ -2613,6 +2712,7 @@
 				8535901D1F4DC63B002F64B2 /* 5A.mp3 in Resources */,
 				85E91B051ECB0DAD00DCC4D4 /* c_uta.png in Resources */,
 				851983661EDD795400C19BB9 /* ca05.mp3 in Resources */,
+				853893B420C68A6800BD1C1C /* S_08.mp3 in Resources */,
 				85EF42C61F1E020F000A9CA9 /* B6.mp3 in Resources */,
 				851983B91EDD796800C19BB9 /* ko18.mp3 in Resources */,
 				85EF42BE1F1E020F000A9CA9 /* B17b.mp3 in Resources */,
@@ -2670,6 +2770,8 @@
 				851983B61EDD796800C19BB9 /* ko15.mp3 in Resources */,
 				851983B71EDD796800C19BB9 /* ko16.mp3 in Resources */,
 				853590211F4DC63B002F64B2 /* 6C.mp3 in Resources */,
+				853893B620C68A6800BD1C1C /* S_10.mp3 in Resources */,
+				853893AC20C68A6800BD1C1C /* S_00.mp3 in Resources */,
 				8581FCD61F5ED5DD0086BF1D /* ntg-05.mp3 in Resources */,
 				8535909F1F4DD06B002F64B2 /* ISK-10.mp3 in Resources */,
 				85358FFA1F4DC63B002F64B2 /* 12A.mp3 in Resources */,
@@ -2684,9 +2786,11 @@
 				854311001F14CFE100681D68 /* ryuji.png in Resources */,
 				854602D11F1CF695003A32C2 /* Y12.mp3 in Resources */,
 				8519835E1EDD795400C19BB9 /* ca16.mp3 in Resources */,
+				853893BC20C68A6800BD1C1C /* S_16.mp3 in Resources */,
 				853590171F4DC63B002F64B2 /* 2B.mp3 in Resources */,
 				851A0F7B1F2867F400E08029 /* k3.mp3 in Resources */,
 				851983D91EDD8A6500C19BB9 /* ve12.mp3 in Resources */,
+				853893AF20C68A6800BD1C1C /* S_03.mp3 in Resources */,
 				85E91B061ECB0DAD00DCC4D4 /* c_veronica.png in Resources */,
 				854516031F1F071D00DCC555 /* o_01.mp3 in Resources */,
 				8531D4291F0BAD7700E7E8C4 /* tutumi007.mp3 in Resources */,

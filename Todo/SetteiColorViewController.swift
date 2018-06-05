@@ -406,6 +406,25 @@ class SetteiColorViewController: UIViewController {
         colorData.set(appDelegate.colorIndex,forKey: "color")
         colorData.synchronize()
     }
+    @IBAction func yuzuha() {
+        appDelegate.aColor = appDelegate.yuzuhaWHITE
+        appDelegate.bColor = appDelegate.yuzuhaBROWN
+        appDelegate.cColor = appDelegate.yuzuhaYELLOW
+        appDelegate.dColor = appDelegate.yuzuhaPINK
+        appDelegate.eColor = appDelegate.yuzuhaRED
+        print(appDelegate.eColor)
+        appDelegate.fColor = appDelegate.yuzuhaBack
+        appDelegate.colorIndex = 19
+        let alertController = UIAlertController(title: "色登録", message: "色設定を【ユズハ】で登録しました", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+        appDelegate.colorIndex = 20
+        colorData.set(appDelegate.colorIndex,forKey: "color")
+        colorData.synchronize()
+    }
 
 
 

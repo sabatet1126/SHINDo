@@ -29,7 +29,11 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        BACK.backgroundColor = UIColor.white
+        print(appDelegate.eColor)
+        //testLabelの文字色を変更するのはDatePickerが変更されたタイミングじゃなくて、Viewが読み込まれた時
+        testLabel.textColor = appDelegate.bColor
+        print(number)
         BACK.backgroundColor = UIColor.white
         print(number)
         
@@ -112,8 +116,16 @@ class AddToDo: UIViewController ,UNUserNotificationCenterDelegate{
     
     @IBAction func addItem(_ sender: AnyObject){
         
+        //日付が変更されていない場合、dateTextがからになる
+        if testLabel.text == "締切日" {
+            //日付の初期値を表示
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd/HH/mm"
+            datetext = formatter.string(from: Date())
+        }
         
         print(itemText.text)
+        
         
         guard itemText.text != "" else {
             //アラート

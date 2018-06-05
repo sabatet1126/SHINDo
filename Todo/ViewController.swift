@@ -68,7 +68,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
         print("初回起動じゃなくても呼ばれるアプリ起動時の処理だよ")
         
         var charasamune:Int = 0
-        var charaImage2 = ["サムネツバキ.png","サムネウタ.png","サムネツツミ.png","サムネヴェロ.png","サムネキャンディス.png","サムネソニア.png","サムネヒバリ.png","サムネアメノミヤ.png","サムネソージ.png","サムネコタロー.png","サムネミナト.png","サムネイッシキ.png","サムネ阿久津.png","サムネノッティンガム.png","サムネノア.png","サムネユリチカ.png","サムネカイト.png","サムネオリバー.png","サムネリュウジ.png"]
+        var charaImage2 = ["サムネツバキ.png","サムネウタ.png","サムネツツミ.png","サムネヴェロ.png","サムネキャンディス.png","サムネソニア.png","サムネヒバリ.png","サムネアメノミヤ.png","サムネソージ.png","サムネコタロー.png","サムネミナト.png","サムネイッシキ.png","サムネ阿久津.png","サムネノッティンガム.png","サムネノア.png","サムネユリチカ.png","サムネカイト.png","サムネオリバー.png","サムネリュウジ.png","サムネユズハ.png"]
         
         if defaults.object(forKey: "samune") != nil {
             charasamune = defaults.object(forKey: "samune") as! Int
@@ -225,6 +225,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
                 appDelegate.dColor = appDelegate.ryujiGRAY
                 appDelegate.eColor = appDelegate.ryujiYELLOW
                 appDelegate.fColor = appDelegate.ryujiBack
+                
+            }else if index == 20{
+                appDelegate.aColor = appDelegate.yuzuhaWHITE
+                appDelegate.bColor = appDelegate.yuzuhaBROWN
+                appDelegate.cColor = appDelegate.yuzuhaYELLOW
+                appDelegate.dColor = appDelegate.yuzuhaPINK
+                appDelegate.eColor = appDelegate.yuzuhaRED
+                appDelegate.fColor = appDelegate.yuzuhaBack
                 
             }
         }
@@ -408,6 +416,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegat
                 musicArr = musicDate.oliverVoice[0]
             }else if charaNum.object(forKey: "Num")as! Int == 18{
                 musicArr = musicDate.ryujiVoice[0]
+            }else if charaNum.object(forKey: "Num")as! Int == 19{
+                musicArr = musicDate.yuzuhaVoice[0]
             }
             
             print(musicArr)
